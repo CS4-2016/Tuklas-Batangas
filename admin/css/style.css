@@ -1,0 +1,71 @@
+.login-page {
+    background-color: white;   
+}
+
+.login-header{
+    font-family: 'Rancho', cursive;
+    color:#009688;
+    font-size: 50px;
+    text-align: center;
+    margin-top: 80px;    
+}
+
+.logo-index{
+    font-family: 'Rancho', cursive;
+    color: white;
+}
+
+
+.login-btn {
+    text-align: center;
+}
+
+.login-form-btns {
+    text-align: center;
+}
+
+.regis-password-box {
+    position: relative;
+}
+
+.site-footer{
+    text-align: center;
+    font-size: 85%;
+    color: #777;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    background-color: #e6e6e6;
+}
+
+.regis-password-show { 
+    position: relative; 
+}
+
+.regis-password-show input { 
+    border:none: background:#fff; 
+    display:block; 
+    width: 100%; 
+    box-sizing: border-box 
+}
+
+.regis-password-show i { 
+    position: absolute; 
+    font-size: 25px;
+    right: 20px;
+}
+
+.show-off{
+    color: #BDBDBD;
+}
+
+.show-on{
+    color: #009688;
+}
+
+.site-logo{
+    height: auto;
+    width: 30px !important;
+}
