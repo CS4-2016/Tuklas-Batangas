@@ -1,0 +1,532 @@
+p.tooltips {
+    position: relative;
+    display: inline;
+    color: white;
+    font-size: 30px;
+    text-shadow: #000 2px 2px 3px;
+    cursor: pointer;
+}
+
+p.tooltips:hover{
+    transition: border-bottom 0.1s ease;
+    border-bottom: 2px solid white;
+}
+
+.map-bullet{
+    color: white;
+    font-size: 30px;
+    text-shadow: #000 2px 2px 3px;
+}
+
+p.tooltips span {
+    position: absolute;
+    width:140px;
+    color: black;
+    background: white;
+    text-shadow: none;
+    text-align: center;
+    visibility: hidden;
+    border-radius: 6px;
+    height: auto;
+}
+
+p.tooltips span:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  margin-top: -8px;
+  width: 0; height: 0;
+  border-left: 8px solid #000000;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+   
+}
+p:hover.tooltips span {
+  visibility: visible;
+  opacity: 0.8;
+  right: 100%;
+  top: 50%;
+  margin-top: -15px;
+  margin-right: 15px;
+  z-index: 999;  
+}
+
+.map-batangas{
+    width: 100%;
+    height: 100%;
+    display: block;
+    
+    
+}
+.slider-batangas{
+    width: 100%;
+    height: auto;
+    background-color: transparent;
+    margin-top: 5%;
+    display: block;
+    
+}
+
+.tuklasbatangas-map-header {
+    font-style: normal;
+    font-size: 34px;
+    font-family: 'Rancho', cursive;
+    color: #009688;
+    text-shadow: none;
+}
+
+.tuklasbatangas-font {
+    font-style: normal;
+    font-size: 34px;
+     font-family: "Times New Roman", Times, serif;
+    color: black;
+}
+
+/* Carousel Styles */
+.carousel-indicators .active {
+    background-color: #009688;
+}
+
+.carousel-inner img {
+    width: 100%;
+}
+
+.carousel-control {
+    width: 0;
+}
+
+.carousel-control.left,
+.carousel-control.right {
+	opacity: 1;
+	filter: alpha(opacity=100);
+	background-image: none;
+	background-repeat: no-repeat;
+	text-shadow: none;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.carousel-control.left span {
+	
+}
+
+.carousel-control.right span {
+	
+}
+
+.carousel-control .glyphicon-chevron-left, 
+.carousel-control .glyphicon-chevron-right, 
+.carousel-control .icon-prev, 
+.carousel-control .icon-next {
+	position: absolute;
+	top: 45%;
+	z-index: 5;
+	display: inline-block;
+}
+
+.carousel-control .glyphicon-chevron-left,
+.carousel-control .icon-prev {
+	left: 0;
+}
+
+.carousel-control .glyphicon-chevron-right,
+.carousel-control .icon-next {
+	right: 0;
+}
+
+.carousel-control.left span,
+.carousel-control.right span {
+	
+}
+
+.carousel-control.left span:hover,
+.carousel-control.right span:hover {
+	opacity: .7;
+	filter: alpha(opacity=70);
+}
+
+/* Carousel Header Styles */
+.header-text {
+    position: absolute;
+    top: 20%;
+    left: 1.8%;
+    right: auto;
+    width: 96.66666666666666%;    
+    color: #fff;
+}
+
+
+
+.header-text h2 {
+    font-size: 40px;
+}
+
+.header-text h2 span {
+    background-color: #2980b9;
+	padding: 10px;
+}
+
+.header-text h3 span {
+	background-color: #000;
+	padding: 15px;
+}
+
+.btn-min-block {
+    min-width: 170px;
+    line-height: 26px;
+}
+
+.btn-theme {
+    color: #fff;
+    background-color: transparent;
+    border: 2px solid #fff;
+   
+}
+
+.btn-theme:hover {
+    color: #000;
+    background-color: #fff;
+    border-color: #fff;
+}
+
+
+
+
+
+.glyphicon { margin-right:5px; }
+.thumbnail
+{
+    margin-bottom: 20px;
+    padding: 0px;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+}
+
+.item.list-group-item
+{
+    float: none;
+    width: 100%;
+    background-color: #fff;
+    margin-bottom: 10px;
+}
+.item.list-group-item:nth-of-type(odd):hover,.item.list-group-item:hover
+{
+    background: #428bca;
+}
+
+.item.list-group-item .list-group-image
+{
+    margin-right: 10px;
+}
+.item.list-group-item .thumbnail
+{
+    margin-bottom: 0px;
+}
+.item.list-group-item .caption
+{
+    padding: 9px 9px 0px 9px;
+}
+.item.list-group-item:nth-of-type(odd)
+{
+    background: #eeeeee;
+}
+
+.item.list-group-item:before, .item.list-group-item:after
+{
+    display: table;
+    content: " ";
+}
+
+.item.list-group-item img
+{
+    float: left;
+}
+.item.list-group-item:after
+{
+    clear: both;
+}
+.list-group-item-text
+{
+    margin: 0 0 11px;
+}
+
+
+.hovereffect {
+width:100%;
+height:100%;
+float:left;
+overflow:hidden;
+position:relative;
+text-align:center;
+cursor:default;
+    margin-top: 10%;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.hovereffect .overlay {
+width:100%;
+height:100%;
+position:absolute;
+overflow:hidden;
+top:0;
+left:0;
+opacity:0;
+background-color:rgba(0,0,0,0.5);
+-webkit-transition:all .4s ease-in-out;
+transition:all .4s ease-in-out
+}
+
+.hovereffect img {
+display:block;
+position:relative;
+-webkit-transition:all .4s linear;
+transition:all .4s linear;
+}
+
+.hovereffect h2 {
+
+color:#009688;
+text-align:center;
+position:relative;
+font-size:40px;
+background:rgba(0,0,0,0.6);
+-webkit-transform:translatey(-100px);
+-ms-transform:translatey(-100px);
+transform:translatey(-100px);
+-webkit-transition:all .2s ease-in-out;
+transition:all .2s ease-in-out;
+padding:10px;
+}
+
+.hovereffect a.info {
+text-decoration:none;
+display:inline-block;
+font-weight:bold;
+color:#009688;
+border:1px solid #009688;
+background-color:transparent;
+opacity:0;
+filter:alpha(opacity=0);
+-webkit-transition:all .2s ease-in-out;
+transition:all .2s ease-in-out;
+margin:50px 0 0;
+padding:7px 14px;
+}
+
+.hovereffect:hover img {
+-ms-transform:scale(1.2);
+-webkit-transform:scale(1.2);
+transform:scale(1.2);
+}
+
+.hovereffect:hover .overlay {
+opacity:1;
+filter:alpha(opacity=100);
+}
+
+.hovereffect:hover h2,.hovereffect:hover a.info {
+opacity:1;
+filter:alpha(opacity=100);
+-ms-transform:translatey(0);
+-webkit-transform:translatey(0);
+transform:translatey(0);
+}
+
+.hovereffect:hover a.info {
+-webkit-transition-delay:.2s;
+transition-delay:.2s;
+}
+
+#slide1, #slide2{ width: 100%; }
+
+#slide1{
+	background:url('../img/map-background.jpg') 50% 0 no-repeat fixed;
+	color: #fff;
+	height: 600px;
+    padding-top:60px;
+    z-index: -12;
+	background-size: cover;
+}
+               
+
+
+#slide2{
+	color: #fff;
+	height: 650px;
+	margin: 0;
+    z-index: -1;
+	background-size: cover;
+    
+}
+
+
+@media (max-width: 993px) {
+#slide1{
+display: none; }
+
+#slide2{
+
+	color: #fff;
+	height: 650px;
+	margin: 0;
+z-index: -1;
+	background-size: cover;
+}
+
+
+} 
+ .post{
+    margin-top: 5%;
+    margin-bottom: 5%;
+    background-color: #FFF;
+    overflow: hidden;
+    box-shadow: 0 0 1px #CCC;
+}
+
+.post .content
+{
+    padding: 15px;
+    color: black;
+}
+.post .author
+{
+    font-size: 11px;
+    color: #737373;
+    padding: 25px 30px 20px;
+}
+.post .post-img-content
+{
+    height: 196px;
+    position: relative;
+}
+.post .post-img-content img
+{
+    position: absolute;
+}
+.post .post-title
+{
+    display: table-cell;
+    vertical-align: bottom;
+    z-index: 2;
+    position: relative;
+}
+.post .post-title b
+{
+    background-color: rgba(51, 51, 51, 0.58);
+    display: inline-block;
+    margin-bottom: 5px;
+    color: #FFF;
+    padding: 10px 15px;
+    margin-top: 5px;
+}
+
+.tuklas-batangas-about {
+    background-color: transparent;
+    color:black;
+    font-family: Lora,'Times New Roman',serif;
+    font-size: 20px;
+     text-align: center;
+}
+
+.img-tuklasbatangas {
+    height: 200px;
+    width: 200px; 
+   margin-left:80px;
+    margin-bottom: 30px;
+}
+
+}
+.input-recaptcha{
+ width:172px;   
+}
+
+.tuklasbatangas-names-governor {
+    margin-bottom:40px;
+}
+
+.tuklas-batangas-about-official {
+     background-color: transparent;
+    color:black;
+    font-family: Lora,'Times New Roman',serif;
+    font-size: 20px;
+     text-align: center;
+    margin-top: 5%;
+}
+
+.tuklas-batangas-page {
+    height: 100%;
+    width: 100%;
+    
+}
+
+.tuklas-batangas-about-batangas {
+    background-color: transparent;
+    color:black;
+    font-family: 'Rancho', cursive;
+ 
+     text-align: center;  
+                        
+}
+
+.imgcaptcha{
+	border: 1px solid #CCCCCC;
+    border-radius: 5px;
+    margin: 40px 10px;
+    float: left;   
+}
+
+
+.refresh{
+	float: left;
+	margin-top:48px;
+	cursor: pointer;
+}
+
+
+.tuklas-batangas-poilist {
+    height: 300px;
+    overflow: hidden;
+}
+
+.content-tuklasbatangas-about {
+    height: 590px;
+    overflow: hidden;
+    padding: 20px;
+}
+
+.content-tuklasbatangas-about img{
+    height: 203px !important;
+    width: 321px !important;
+}
+
+/* Carousel Header Styles */
+.header-text-admin {
+    position: absolute;
+    top: 20%;
+    left: 1.8%;
+    right: auto;
+    width: 96.66666666666666%;
+    color: #fff;
+}
+
+/* Carousel Header Styles */
+.header-slider {
+    position: absolute;
+    top: 20%;
+    left: 1.8%;
+    right: auto;
+    width: 96.66666666666666%;
+    color: #fff;
+}
+
+.slider-modal ul li{
+    list-style-type:none;
+}
+
+.slider-checkbox {
+    font-size: 15px !important;
+    color: black;
+}

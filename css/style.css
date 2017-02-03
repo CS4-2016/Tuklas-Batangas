@@ -1,0 +1,482 @@
+/*
+#009688 //green
+#ffe97c //yellow
+#f44336; //red
+*/
+
+html,
+body {
+	margin:0;
+	padding:0;
+	height:100%;
+    font-family: 'Lato', sans-serif;
+}
+
+#wrapper {
+	min-height:100%;
+	position:relative;
+}
+
+#content {
+	 /* Height of the footer element */
+}
+
+.tuklasbatangas-navbar{
+    z-index: 9999 !important;
+    border: none;
+    height: 60px;
+    background-color: #009688;
+    margin: 0px;
+    width:100%;
+}
+
+.tuklasbatangas-navbar-admin{
+    z-index:1000 !important;
+    border: none;
+    background-color: #009688;
+    margin: 0px;
+    width:100%;
+}
+
+.admin-header{
+    height:40px;
+    background-color:#1b2828;
+    padding-right:14px;
+    margin:0px !important
+}
+
+.admin-header2{
+    height:40px;
+    background-color:#1b2828;
+}
+
+.admin-header2 a p{
+    margin-bottom:0px;
+}
+
+.admin-header-text{
+    padding:10px;
+    color:white; 
+    
+}
+
+.admin-status-text li{
+    text-decoration:none;
+    list-style-type: none;
+    float:right;
+    padding:10px;
+    
+    padding-bottom:8px;
+}
+
+.admin-status-text li:hover{
+    text-decoration:none;
+}
+
+.admin-header-active {
+    border-bottom: 2px solid #ffff99;
+    font-weight: 500;
+    background-color:#293d3d;
+}
+
+.btn-login-header{
+    margin-left:10px !important;
+    margin-right:10px !important
+}
+.tuklasbatangas-logo{
+    height: 30px;
+    width: auto;
+}  
+
+.tuklasbatangas-navbar, .tuklasbatangas-nav ul li, .tuklasbatangas-nav ul li a{
+    height: 50px;
+}
+
+.tuklasbatangas-nav ul li a {
+    padding:15px;
+}
+
+.tuklasbatangas-nav ul li.active{
+    border-bottom: 2px solid #ffff99;
+    font-weight: 500;
+}
+
+.navbar-brand{
+    padding:10px;
+    padding-bottom: 0px;
+    height: 50px !important;
+}
+
+.tuklasbatangas-transparent-btn{
+    border: 1px solid white;
+    border-radius: 25px;
+    padding:5px !important;
+    margin:0px;
+    margin-top: 10px;
+    height: 30px !important;
+    width: 110px;
+}
+
+.tuklasbatangas-main-content{
+    width:100%;
+    margin-bottom:100px;
+    min-height: 500px;
+    padding-top:70px;
+}
+
+.tuklasbatangas-space h1{
+    text-align: center;
+    
+    text-shadow: 1px 1px black;
+}
+
+.footer{  
+	width:100%;
+	height:350px;
+	position:relative;
+	bottom:0;
+	left:0;
+}
+
+.banner2{
+    height:50px;
+    width:auto;
+    padding: 0;
+}
+.footer-icons a i{
+    color:white;
+}
+
+.footer-icons a{
+    border: 1px solid white;
+}
+.footer-columns{
+    padding: 20px;
+    background-color: #33383b;
+}
+.footer-center  i{
+    color: #ffffff;
+    font-size: 20px;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 42px;
+    margin: 10px 15px;
+    vertical-align: middle;
+}
+
+.footer-right, .footer-center, .footer-left{
+    padding-top:25px
+}
+
+.footer-center p {
+    display: inline-block;
+    color: #ffffff;
+    vertical-align: middle;
+    margin: 0;
+}
+
+.tuklas-header{
+    color:#009688;
+    font-family: 'Rancho', cursive;
+    font-size: 40px;
+    text-align: center;
+}
+
+.login-sub-header{
+    color:#009688;
+    font-family: 'Rancho', cursive;
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.login-form-btns{
+    text-align: center;
+}
+
+.already-registered { /* Already have an account? Click here to login */
+    color: #BDBDBD;
+    text-align:center;
+}
+
+.tuklasbatangas-password-show { 
+    position: relative; 
+}
+
+.tuklasbatangas-password-show input { 
+    border:none: background:#fff; 
+    display:block; 
+    width: 100%; 
+    box-sizing: border-box;
+    position: relative
+}
+
+.tuklasbatangas-password-show i { 
+    position: absolute; 
+    font-size: 25px;
+    right: 20px;
+}
+
+.show-off, .show-off2, .show-off3{
+    color: #BDBDBD;
+    position: absolute;
+    top: 0px;
+}
+
+.show-on, .show-on2, .show-on3{
+    color: #009688;
+    position: absolute;
+    top: 0px;
+}
+
+.remember-me{
+    text-align:center;
+}
+
+.fa-select-city{
+    position: absolute; 
+    font-size: 15px;
+    right: 30px;
+    top: 10px;
+    z-index:-99;
+    color: #BDBDBD;
+}
+
+@media (max-width: 993px) {
+    .footer-columns{
+        background-color: #33383b;
+    }
+    
+    #footer{
+        text-align:center;
+    }
+    
+    .label-email, .label-message{
+        text-align:left;
+    }
+}
+
+.tuklas-batangas {
+    font-family: sans-serif;
+    font-size: -webkit-xxx-large;
+    color: #009688;
+    font-family: 'Rancho', 'cursive';
+    padding-top:40px;
+}
+
+
+.tuklas-batanagas-governor {
+    margin: 25px;
+}
+
+.inputcaptcha {
+    color: black;
+}
+
+.carousel-indicators{
+    bottom:80px;
+}
+
+.user-logged-in{
+    color: #009688;
+}
+
+.contact-header {
+    color: #ffe97c;
+    background-color: #009688;
+    height: 70px;
+    font-family: 'Rancho', 'cursive';
+    text-align:center;
+    font-size: 27px;
+    padding-top:15px;
+}
+
+.reenter-captcha{
+    margin-left:-188px;
+    color:#f44336;
+}
+
+.username-taken{
+    color:#f44336;
+}
+
+.fa-document-info:before{
+    font-size:20px;
+    color: #009688;
+    cursor: pointer;
+}
+
+#document-info{
+    font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+    color:black;
+    margin-top:100px;
+}
+
+.register-thankyou {
+    color: #009688;
+    font-size: 40px;
+    font-family: 'Rancho', 'cursive';
+    text-align:center;
+    
+}
+
+.account-pending-info {
+    color:black;
+    text-align: center;
+}
+
+.register-message {
+    background-color:white;
+    padding:20px;
+    
+}
+
+.register-backtohome {
+    padding-top:40px;
+}
+
+.login-fail {    
+    color:#f44336;
+}
+
+.status-text {
+    right:0;
+}
+
+.tuklasbatangas-quote {
+    padding-top:30px;
+    padding-bottom:30px;
+    background-color: #009688;
+}
+
+.tuklasbatangas-quote-message {
+    font-size: 50px;
+    font-family: 'Rancho', 'cursive';
+    text-align:center;
+    color: white;
+}
+
+/*
+.tuklabatangas-quote-left{
+    font-size: 30px;
+}   
+*/
+
+.quote-author {
+    float:right;
+    font-size:20px;
+    color: white;
+}
+
+
+
+.tuklas-pending {
+    color:red;
+}
+
+.h2-grid {
+    font-family: 'Rancho', 'cursive';
+    text-transform: none;
+}
+.tuklasbatangas-h1 {
+    color: #009688;
+    text-align: center;
+    font-family: 'Rancho', 'cursive';
+    margin-top: 0px;
+}
+
+.admin-status-right {
+    float:right;
+    padding:10px;
+    color:white;
+}
+
+.table-members {
+    color:black;
+}
+
+
+
+.tuklas-gridview {
+    margin-top:50px;
+}
+
+.tuklas-nav {
+    background-color:#009688;
+    opacity:1 !important
+}
+
+.tuklas-header2{
+    color:#009688;
+    font-family: 'Rancho', cursive;
+    font-size: 25px;
+    text-align: center;
+}
+
+
+
+
+
+
+
+.edit-slider {
+    position:absolute;
+    top:5%;
+    right:5%;
+    z-index:99;
+}
+
+
+
+.slider-modal-header{
+    color:#009688;
+    font-family: 'Rancho', cursive;
+    font-size: 20px;
+}
+
+.tuklaslider-header {
+    color:#009688;
+    font-family: 'Rancho', cursive;
+    font-size: 40px;
+    text-align: center;
+    text-shadow: 1px 1px black;
+}
+
+.edit-quote {
+    position:absolute;
+    right:5%;
+    z-index:99;
+}
+
+.tuklaslider-subheader {
+     color:#009688;
+    font-family: 'Rancho', cursive;
+    font-size: 40px;
+    text-align: center;
+    text-shadow: 1px 1px black;
+}
+
+.tuklaslider-sub {
+    color: white;
+    font-family: 'Rancho', cursive;
+    font-size: 30px;
+    text-align: center;
+    text-shadow: 1px 1px black;
+    width:50%;
+    margin-left:25%;
+}
+
+.slider-img {
+    height: 700px;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.slider-img img{
+    position:absolute;
+    top:0;
+    left:0;
+}
