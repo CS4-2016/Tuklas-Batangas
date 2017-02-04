@@ -5,21 +5,30 @@
     $db = new db();
 	$db -> Connect();
     
-    $SQL = "SELECT * FROM `users`";
+    $usertype = $_SESSION['usertype'];
+
+    if($usertype == 'lto'){
+        $user_header = "Points of Interest Owners";
+        $SQL = "SELECT * FROM `users` where `type` = 'poi'";
+    }else{
+        $user_header = "Users";
+        $SQL = "SELECT * FROM `users`";
+    }
+    
     $db->Query($SQL);
     
     if($db->result){
         while($row = $db->result->fetch_assoc()){
             $memberList[] = $row;
         } 
-    }    
+    }   
 ?>
     
         
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1>
-                Users
+                <?php echo $user_header; ?>
             </h1>
             <ol class="breadcrumb">
                 <li><a href="index.php"><i class="fa fa-dashboard"></i> Home</a></li>

@@ -3,6 +3,9 @@
     
     $db = new db();
 	$db -> Connect();
+
+    $type = $_SESSION['usertype'];
+    $username = $_SESSION['username'];
 ?>
 
 <!DOCTYPE html>
@@ -59,14 +62,28 @@
     
   <!-- Left side column. contains the logo and sidebar -->
   <aside class="main-sidebar">
-
-    <!-- sidebar: style can be found in sidebar.less -->
     <section class="sidebar">
       <!-- Sidebar Menu -->
-      <ul class="sidebar-menu">
-        <li class="header">HEADER</li>
-        <!-- Optionally, you can add icons to the links -->
-        <li class="active"><a href="users.php"><i class="fa fa-users"></i> <span>Users</span></a></li>
+        <ul class="sidebar-menu">
+            <li class="header">HEADER</li>
+            
+            <!-- ADMIN HEADER -->
+            <?php if($type == 'admin'){ ?>
+                <li class="active"><a href="users.php"><i class="fa fa-users"></i> <span>Users</span></a></li>
+            <?php } ?>
+            
+            <!-- ADMIN HEADER -->
+            <?php if($type == 'poi'){ ?>
+                <li class="active"><a href="points-of-interests.php?x=<?php echo $username; ?>"><i class="fa fa-dot-circle-o"></i> <span>My Points of Interests</span></a></li>
+            <?php } ?>
+            
+            <!-- ADMIN HEADER -->
+            <?php if($type == 'lto'){ ?>
+                <li class="active"><a href="users.php"><i class="fa fa-users"></i> <span>POI Accounts</span></a></li>
+            <?php } ?>
+            
+                
+          
 <!--
         <li><a href="#"><i class="fa fa-link"></i> <span>Clients</span></a></li>
         <li class="treeview">

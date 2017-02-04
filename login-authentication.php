@@ -22,23 +22,15 @@
             if($db->result){
                 $account = $db->result->fetch_assoc();
                 
-                if($account['type'] == 'admin'){
-                    header("Location: admin/index.php");    
-                } else if($account['type'] == 'poi'){
-                    header("Location: index.php");
-                } else if($account['type'] == 'ptc'){
-                    header("Location: index.php");
-                } else if($account['type'] == 'lto'){
-                    header("Location: index.php");
-                }
+                $_SESSION['usertype'] = $account['type'];
+                
+                header("Location: admin/index.php");
             }
-        }
-        else{
+        }else{
             echo $_SESSION['login-attempt'] = 1;
             header("Location: login.php");
         }  
-    }        
-    else{
+    }else{
         $_SESSION['username'] = $_SESSION['free-username'];
         header("Location: register-success.php");
     }
