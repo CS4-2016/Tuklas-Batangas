@@ -18,8 +18,9 @@
     <!-- Main content -->
     <section class="content">
 
-      foobar
 
+      foobar
+           
     </section>
 
 <?php
