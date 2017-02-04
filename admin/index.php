@@ -3,7 +3,7 @@
     require_once("header.php");
 
 ?>
-<!-- JAE-->
+<!-- MOORE -->
         
         <!-- Content Header (Page header) -->
         <section class="content-header">
