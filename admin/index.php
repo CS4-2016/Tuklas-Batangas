@@ -18,7 +18,7 @@
     <!-- Main content -->
     <section class="content">
 
-      
+      lorem ipsum dolor sit amet
 
     </section>
 
