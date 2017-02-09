@@ -17,18 +17,16 @@
 
 <!-- jQuery 2.2.3 -->
 <script src="js/jquery-2.2.3.min.js"></script>
+
 <!-- Bootstrap 3.3.6 -->
 <script src="js/bootstrap.js"></script>
+
 <!-- AdminLTE App -->
 <script src="js/app.min.js"></script>
 
 <!-- Bootstrap Material Design -->
 <script type="text/javascript" src="js/material.js"></script>
 <script type="text/javascript" src="js/ripples.js"></script>
-
-<!-- Optionally, you can add Slimscroll and FastClick plugins.
-     Both of these plugins are recommended to enhance the
-     user experience. Slimscroll is required when using the
-     fixed layout. -->
+<script type="text/javascript" src="js/header-drop-down.js"></script>
 </body>
 </html>

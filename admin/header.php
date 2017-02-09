@@ -1,6 +1,6 @@
 <?php
     require_once("dbconn.php");
-    
+
     $db = new db();
 	$db -> Connect();
 
@@ -39,12 +39,11 @@
     <link rel="icon" href="../img/tuklasbatangas-favicon.ico" type="image/x-icon">    
 </head>
 
-<body class="hold-transition skin-green-light sidebar-mini">
+<body class="hold-transition skin-green-light sidebar-mini fixed">
 <div class="wrapper">
-
   <!-- Main Header -->
   <header class="main-header">
-    <!-- Logo -->   <a href="#" class="logo">
+    <!-- Logo -->   <a href="index.php" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><img src="../img/tuklas.png" class="site-logo"></span>
       <!-- logo for regular state and mobile devices -->
@@ -54,9 +53,22 @@
     <!-- Header Navbar -->
     <nav class="navbar navbar-static-top" role="navigation">
       <!-- Sidebar toggle button-->
-      <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
-        <span class="sr-only">Toggle navigation</span>
-      </a>
+        <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+            <span class="sr-only">Toggle navigation</span>
+        </a>
+        
+        <!-- Username on the right side of the SPA module -->
+        <div class="navbar-custom-menu unselectable" style="padding: 15px; cursor: pointer"> 
+            <div id="header-user-click">
+                <?php echo $username; ?>
+                <i class="fa fa-user fa-fw"></i>
+                <i class="fa fa-caret-down"></i>
+            </div>
+            <ul class="unselectable" id="header-drop-down">
+                <li><a href="user-profile.php"><i class="fa fa-user"></i> User Profile</a></li>
+                <li><a href="logout.php"><i class="fa fa-sign-out"></i> Logout</a></li>
+            </ul>
+        </div>
     </nav>
   </header>
     
@@ -65,7 +77,7 @@
     <section class="sidebar">
       <!-- Sidebar Menu -->
         <ul class="sidebar-menu">
-            <li class="header">HEADER</li>
+            <li class="header">Main Navigation</li>
             
             <!-- ADMIN HEADER -->
             <?php if($type == 'admin'){ ?>

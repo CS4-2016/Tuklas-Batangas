@@ -15,7 +15,6 @@
     color: white;
 }
 
-
 .login-btn {
     text-align: center;
 }
@@ -68,4 +67,45 @@
 .site-logo{
     height: auto;
     width: 30px !important;
+}
+
+.unselectable {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+#header-drop-down{
+    color:black;
+    list-style:none;
+    z-index: 1000;
+    border: 1px solid rgba(0,0,0,.15);
+    border-radius: 4px;
+    background-color:white;
+    padding:0px;
+    margin-top:14px;
+    position: absolute;
+}
+
+#header-drop-down li{
+    border: 1px solid rgba(0,0,0,.15);
+    padding:10px 20px;
+}
+
+#header-drop-down li:last-of-type{
+    border-top: none; 
+}
+
+#header-drop-down li a{
+    text-decoration: none;
+    color: black;
+    font-size: 12px;
+}
+
+#header-drop-down li:hover{
+    background-color: #009688;
+}
+
+#header-drop-down li:hover a{
+    color: white;
 }
