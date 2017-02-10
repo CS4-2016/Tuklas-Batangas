@@ -17,50 +17,6 @@
     <section class="content">
 
         lorem ipsum dolor sit amet<br>
-        lorem ipsum dolor sit amet<br>
-        lorem ipsum dolor sit amet<br>
-        lorem ipsum dolor sit amet<br>
-        lorem ipsum dolor sit amet<br>
-        lorem ipsum dolor sit amet<br>
-        lorem ipsum dolor sit amet<br>
-        lorem ipsum dolor sit amet<br>
-        lorem ipsum dolor sit amet<br>
-        lorem ipsum dolor sit amet<br>
-        lorem ipsum dolor sit amet<br>
-        lorem ipsum dolor sit amet<br>
-        lorem ipsum dolor sit amet<br>
-        lorem ipsum dolor sit amet<br>
-        lorem ipsum dolor sit amet<br>
-        lorem ipsum dolor sit amet<br>
-        lorem ipsum dolor sit amet<br>
-        lorem ipsum dolor sit amet<br>
-        lorem ipsum dolor sit amet<br>
-        lorem ipsum dolor sit amet<br>
-        lorem ipsum dolor sit amet<br>lorem ipsum dolor sit amet<br>
-        lorem ipsum dolor sit amet<br>
-        lorem ipsum dolor sit amet<br>
-        lorem ipsum dolor sit amet<br>
-        lorem ipsum dolor sit amet<br>
-        lorem ipsum dolor sit amet<br>
-        lorem ipsum dolor sit amet<br>lorem ipsum dolor sit amet<br>
-        lorem ipsum dolor sit amet<br>
-        lorem ipsum dolor sit amet<br>
-        lorem ipsum dolor sit amet<br>
-        lorem ipsum dolor sit amet<br>
-        lorem ipsum dolor sit amet<br>
-        lorem ipsum dolor sit amet<br>lorem ipsum dolor sit amet<br>
-        lorem ipsum dolor sit amet<br>
-        lorem ipsum dolor sit amet<br>
-        lorem ipsum dolor sit amet<br>
-        lorem ipsum dolor sit amet<br>
-        lorem ipsum dolor sit amet<br>
-        lorem ipsum dolor sit amet<br>lorem ipsum dolor sit amet<br>
-        lorem ipsum dolor sit amet<br>
-        lorem ipsum dolor sit amet<br>
-        lorem ipsum dolor sit amet<br>
-        lorem ipsum dolor sit amet<br>
-        lorem ipsum dolor sit amet<br>
-        lorem ipsum dolor sit amet<br>
     </section>
 
 <?php

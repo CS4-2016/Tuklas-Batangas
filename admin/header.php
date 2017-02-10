@@ -33,10 +33,16 @@
     <link rel="stylesheet" href="css/tuklas.css">
     <link rel="stylesheet" href="css/skin-green-light.css">
     <link rel="stylesheet" href="css/style.css">    
+    <link href="css/style_jae.css" rel="stylesheet">
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="../img/tuklasbatangas-favicon.ico" type="image/x-icon">
     <link rel="icon" href="../img/tuklasbatangas-favicon.ico" type="image/x-icon">    
+    
+    <!-- Summernote -->
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.2/summernote.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/codemirror/3.20.0/codemirror.css">
+    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/codemirror/3.20.0/theme/monokai.css">
 </head>
 
 <body class="hold-transition skin-green-light sidebar-mini fixed">
@@ -84,12 +90,12 @@
                 <li class="active"><a href="users.php"><i class="fa fa-users"></i> <span>Users</span></a></li>
             <?php } ?>
             
-            <!-- ADMIN HEADER -->
+            <!-- POI HEADER -->
             <?php if($type == 'poi'){ ?>
                 <li class="active"><a href="points-of-interests.php?x=<?php echo $username; ?>"><i class="fa fa-dot-circle-o"></i> <span>My Points of Interests</span></a></li>
             <?php } ?>
             
-            <!-- ADMIN HEADER -->
+            <!-- LTO HEADER -->
             <?php if($type == 'lto'){ ?>
                 <li class="active"><a href="users.php"><i class="fa fa-users"></i> <span>POI Accounts</span></a></li>
             <?php } ?>

@@ -1,17 +1,12 @@
 <?php
     session_start(); 
-    $_SESSION['page'] = 'poi';
     require_once("header.php");
-
-    if(empty($_SESSION['username'])){
-        header("Location: index.php");
-    }
     
     $db = new db();
     $db->Connect();
     
-    $username = $_SESSION['username'];
-    $SQL = "SELECT * FROM `poi` WHERE `username` = '$username'";
+    $poi = $_GET['x'];
+    $SQL = "SELECT * FROM `poi` WHERE `id` = '$poi'";
     $db->Query($SQL);
     
     if($db->result){
@@ -30,40 +25,56 @@
         $gallery = "empty";
 
 ?>
-    <div id="content">
-        <div class="tuklasbatangas-main-content tuklasbatangas-space <?php if(!empty($_SESSION['username'])){ echo "tuklasbatangas-admin";} ?>">
-            <div class="container">
-                <div class="row tuklasbatangas-UserProfile">
-                    <div class="col-md-12">
-                        <div class="tuklas-header" style="margin-bottom:40px">
-                            Edit <?php echo $row['establishment']; ?>
-                        </div>  
-                    </div>           
+<style>
+.tuklas-header2{
+    color:#009688;
+    font-family: 'Rancho', cursive;
+    font-size: 25px;    
+}
+</style>
+
+<!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            Edit <?php echo $row['establishment']; ?>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="index.php"><i class="fa fa-dashboard"></i> Home</a></li>
+        </ol>
+    </section>
+        
+    <!-- Main content -->
+    <section class="content">
+        <div class="poi-content">
+            <form action="edit-poi2.php" method="post" class="form-horizontal" id="form1" enctype="multipart/form-data">
+                
+            <input type="hidden" name="id" value="<?php echo $poi; ?>">    
+            <input type="hidden" name="current-lat" id="current-lat" value="<?php echo $row['latitude']; ?>">
+            <input type="hidden" name="current-long" id="current-long" value="<?php echo $row['longitude']; ?>">
+
+            <input type="hidden" name="latitude" id="latitude"/>
+            <input type="hidden" name="longitude" id="longitude"/>
+            <input type="hidden" name="content" id="content"/>
+            
+            <div class="tuklas-header2">
+                Content 
+            </div>    
+            <br>
+            
+            <div class="summernote">
+                <?php echo $row['content']; ?>
+            </div>
+            <br><br>
+            <div class="tuklas-header2">
+                Short Description <i class="fa fa-sm fa-question-circle fa-document-info" aria-hidden="true" type="button" data-toggle="modal" data-target="#document-info"></i> 
+            </div>
+            <div class="form-group">
+                <div class="col-md-12">
+                    <textarea name="description" class="form-control" rows="5" id="textArea"><?php echo $row['description']; ?></textarea>
                 </div>
-                <div class="row">
-                    <div class="col-md-12 personal-info">
-                        <div class="tuklas-batangas-view">
-                            <div class="tuklas-header2">
-                                Content 
-                            </div><br>
-                            <center>
-                                <button id="edit" class="btn btn-raised btn-primary" onclick="edit()">Edit</button>
-                                <button id="save" class="btn btn-raised btn-primary" onclick="save()">Save</button>  
-                            </center><br>
-                            <form action="edit-poi2.php" method="post" class="form-horizontal" id="form1" enctype="multipart/form-data">
-                                <input type="hidden" name="current-lat" id="current-lat" value="<?php echo $row['latitude']; ?>">
-                                <input type="hidden" name="current-long" id="current-long" value="<?php echo $row['longitude']; ?>">
-                                
-                                <input type="hidden" name="latitude" id="latitude"/>
-                                <input type="hidden" name="longitude" id="longitude"/>
-                                <input type="hidden" name="content" id="content"/>
-                                <div class="click2edit">
-                                    <?php echo $row['content']; ?>
-                                </div>	            
-                        </div> 
-                    </div>     
-                </div>
-                <div class="modal fade" role="dialog" id="document-info">
+            </div>
+            
+            <div class="modal fade" role="dialog" id="document-info">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
@@ -74,36 +85,31 @@
                                 <p>Please provide a short description of your establishment. This will be displayed on the list of points of interest by area as the description of your listing.</p>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" data-dismiss="modal" class="btn btn-primary modal-dismiss">Got it!</button>                                </div>
+                                <button type="button" data-dismiss="modal" class="btn btn-raised btn-primary modal-dismiss">Got it!</button>                                </div>
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                     <div class="tuklas-header2"><br><br>Short Description <i class="fa fa-question-circle fa-document-info" aria-hidden="true" type="button" data-toggle="modal" data-target="#document-info"></i> <br><br></div> 
-                        <div class="col-md-6 col-md-offset-3">
-                            <div class="form-group label-floating">
-                                <label for="t1" class="control-label">Floating label</label>
-                                <textarea rows=7 id="description" name="description" class="form-control"><?php echo $row['description']; ?></textarea>
-                             </div>
-                        </div>  
-                    </div>
-                <div class="row">
-                    <div id="links">
-                        <div class="tuklas-header2"><br><br>Gallery<br><br></div>                        
-                        <div class="col-md-6 col-md-offset-3">
-                            <div class="form-group">
-                                <input type="file" name="gallery[]" multiple accept="image/*">
-                                <div class="input-group">
-                                    <input form="form1" type="text" readonly="" class="form-control" placeholder="Insert image/s">
-                                    <span class="input-group-btn input-group-sm">
-                                        <button type="button" class="btn btn-fab btn-fab-mini" style="color: white; background-color:#009688">
-                                            <i class="fa fa-picture-o" aria-hidden="true"></i>
-                                        </button>
-                                    </span>
-                                </div>
-                            </div><br><br>
+                
+            <br><br>
+            <div class="tuklas-header2">
+                Gallery
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3">
+                    <div class="form-group">
+                        <input type="file" name="gallery[]" multiple accept="image/*">
+                        <div class="input-group">
+                            <input form="form1" type="text" readonly="" class="form-control" placeholder="Insert image/s">
+                            <span class="input-group-btn input-group-sm">
+                                <button type="button" class="btn btn-fab btn-fab-mini" style="color: white; background-color:#009688">
+                                    <i class="fa fa-picture-o" aria-hidden="true"></i>
+                                </button>
+                            </span>
                         </div>
-                        <div class="container">
+                    </div>
+                </div>   
+            </div>
+            <div class="container">
                             <?php if(!empty($_SESSION['error'])){ ?>
                                 
                             
@@ -138,7 +144,7 @@
                                                 </div>
                                                 <div class="modal-footer">
                                                     <input type="hidden" value="<?php echo $gallery[$x]; ?>" name="img-caption[]">
-                                                    <input type="submit" value="Save Caption - <?php echo $x; ?>" name="submit" class="btn btn-primary"> 
+                                                    <input type="submit" value="Save Caption - <?php echo $x; ?>" name="submit" class="btn btn-raised btn-primary"> 
                                                 </div>
                                             </div>
                                         </div>
@@ -149,11 +155,16 @@
                                 <?php }  ?>
                                     <div class="col-md-4" style="margin-top:20px;">
                                         <div class="hovereffect" style=" background-color:black;">
-                                            <center><img  class="img-responsive" style="height:200px; width:auto;" src="gallery/<?php echo $_SESSION['username']; ?>/<?php echo $gallery[$x]; ?>"></center>
+                                            <center><img  class="img-responsive" style="height:200px; width:auto;" src="../gallery/<?php echo $_SESSION['username']; ?>/<?php echo $gallery[$x]; ?>"></center>
                                             <div class="overlay">
-                                                <a class="btn btn-fab btn-primary tuklas-gridview2" type="button" data-toggle="modal" data-target="#caption<?php echo $x; ?>"><center><i class="fa fa-pencil-square-o" style="margin-top:16px"></i></center></a>    
-                                                <a title="<?php echo $caption[$x]; ?>" data-gallery="" href="gallery/<?php echo $row['username']; ?>/<?php echo $gallery[$x] ?>" class="btn btn-fab btn-primary tuklas-gridview2"><center><i class="fa fa-eye" style="margin-top:16px"></i></center></a>
-                                                <a class="btn btn-fab btn-primary tuklas-gridview2" href="delete-gallery.php?user=<?php echo $_SESSION['username']; ?>&img=<?php echo $gallery[$x]; ?>"><center><i class="fa fa-trash-o" style="margin-top:16px"></i></center></a>
+                                            
+                                                <a class="btn btn-fab btn-primary tuklas-gridview2" type="button" data-toggle="modal" data-target="#caption<?php echo $x; ?>" style="margin-top:70px"><center><i class="fa fa-pencil-square-o" style="margin-top:16px"></i></center></a>    
+                                                
+                                                <a title="<?php echo $caption[$x]; ?>" data-gallery="" href="../gallery/<?php echo $row['username']; ?>/<?php echo $gallery[$x]; ?>" class="btn btn-fab btn-primary tuklas-gridview2" style="margin-top:70px"><center><i class="fa fa-eye" style="margin-top:16px"></i></center></a>
+                                                
+                                                
+                                                <a class="btn btn-fab btn-primary tuklas-gridview2" href="delete-gallery.php?user=<?php echo $_SESSION['username']; ?>&img=<?php echo $gallery[$x]; ?>" style="margin-top:70px"><center><i class="fa fa-trash-o" style="margin-top:16px"></i></center></a>
+                                                
                                             </div>
                                         
                                             <?php if($x%3 == 2 || $x == (count($gallery)-1)){ ?>
@@ -161,33 +172,24 @@
                                     <?php }  ?>
                                     </div>
                                     </div>
+                            
                                 <?php } ?>
                             <?php } ?>
+                            
+                            
                         </div>
-                    </div>
-                </div>
+            <br><br><br><br>
+                
+            <div class="tuklas-header2">
+                Establishment Location
             </div>
-            
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-md-12" style="padding:0px">
-                        <div class="tuklas-header2">
-                            <br><br><br><br>
-                            Establishment Location 
-                        </div><br>
-                        <div id="myMap" style="border-top: 2px solid #009688; border-bottom: 2px solid #009688">
-                        </div>
-                        <div class="tuklas-header2">
-                            <br> Drag the marker to the exact location of the establishment.
-                        </div>
-                    </div>
-                </div>
+            <br>
+            <div id="myMap" style="border: 2px solid #009688;">
             </div>
-            <div class="form-group">
-                <center> <input class="btn btn-raised btn-primary" type="button" data-toggle="modal" data-target="#save-changes" value="Save Changes"></center>
-                </div>
-
-                <div class="modal fade" role="dialog" id="save-changes">
+        </div>
+        <br><br>
+        <center> <input class="btn btn-raised btn-primary" type="button" data-toggle="modal" data-target="#save-changes" value="Save Changes"></center>
+        <div class="modal fade" role="dialog" id="save-changes">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
@@ -204,23 +206,13 @@
                         </div>
                     </div>
                 </div>
-            </form>
-        </div>
-    </div><!-- #content -->
-    <div id="blueimp-gallery" class="blueimp-gallery">
-        <div class="slides"></div>
-        <h3 class="title"></h3>
-        <a class="prev">‹</a>
-        <a class="next">›</a>
-        <a class="close">×</a>
-        <a class="play-pause"></a>
-        <ol class="indicator"></ol>
-    </div>
-
-
-<?php require_once("footer.php"); ?>
-
-
+    </section>
+        
+        
+<?php
+    require_once("footer.php");
+?>
+        
 <style>
 #myMap {
     width:100%;
@@ -288,3 +280,4 @@
 
     google.maps.event.addDomListener(window, 'load', initialize);
 </script>  
+    
