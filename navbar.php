@@ -10,7 +10,10 @@
             $contact = "active";
         } else if ($_SESSION['page'] == "about"){
             $about = "active";
-        } else if ($_SESSION['page'] == 'members'){
+        }  else if ($_SESSION['page'] == "Explore"){
+            $exlpore = "active";
+        }
+        else if ($_SESSION['page'] == 'members'){
             $members = "admin-header-active";
         } else if ($_SESSION['page'] == 'user-profile'){
             $userprofile = "admin-header-active";
@@ -135,6 +138,7 @@
                             </form>
                             <ul class="nav navbar-nav" id="nav">
                                 <li class="<?php echo $about; ?>"><a href="about.php">ABOUT</a></li>
+                                   <li class="<?php echo $exlpore; ?>"><a href="explore.php">EXPLORE</a></li>
                                 <li class="<?php echo $contact; ?>"><a href="contact.php">CONTACT</a></li>
                                 <?php if(empty($_SESSION['username'])){ ?>
                                         <li><a href="login.php" class="btn btn-login-header tuklasbatangas-transparent-btn">LOGIN</a></li>
