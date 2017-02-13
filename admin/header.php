@@ -1,6 +1,6 @@
 <?php
     require_once("dbconn.php");
-    
+
     $db = new db();
 	$db -> Connect();
 
@@ -33,18 +33,23 @@
     <link rel="stylesheet" href="css/tuklas.css">
     <link rel="stylesheet" href="css/skin-green-light.css">
     <link rel="stylesheet" href="css/style.css">    
+    <link href="css/style_jae.css" rel="stylesheet">
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="../img/tuklasbatangas-favicon.ico" type="image/x-icon">
     <link rel="icon" href="../img/tuklasbatangas-favicon.ico" type="image/x-icon">    
+    
+    <!-- Summernote -->
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.2/summernote.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/codemirror/3.20.0/codemirror.css">
+    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/codemirror/3.20.0/theme/monokai.css">
 </head>
 
-<body class="hold-transition skin-green-light sidebar-mini">
+<body class="hold-transition skin-green-light sidebar-mini fixed">
 <div class="wrapper">
-
   <!-- Main Header -->
   <header class="main-header">
-    <!-- Logo -->   <a href="#" class="logo">
+    <!-- Logo -->   <a href="index.php" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><img src="../img/tuklas.png" class="site-logo"></span>
       <!-- logo for regular state and mobile devices -->
@@ -54,9 +59,22 @@
     <!-- Header Navbar -->
     <nav class="navbar navbar-static-top" role="navigation">
       <!-- Sidebar toggle button-->
-      <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
-        <span class="sr-only">Toggle navigation</span>
-      </a>
+        <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+            <span class="sr-only">Toggle navigation</span>
+        </a>
+        
+        <!-- Username on the right side of the SPA module -->
+        <div class="navbar-custom-menu unselectable" style="padding: 15px; cursor: pointer"> 
+            <div id="header-user-click">
+                <?php echo $username; ?>
+                <i class="fa fa-user fa-fw"></i>
+                <i class="fa fa-caret-down"></i>
+            </div>
+            <ul class="unselectable" id="header-drop-down">
+                <li><a href="user-profile.php"><i class="fa fa-user"></i> User Profile</a></li>
+                <li><a href="logout.php"><i class="fa fa-sign-out"></i> Logout</a></li>
+            </ul>
+        </div>
     </nav>
   </header>
     
@@ -65,19 +83,19 @@
     <section class="sidebar">
       <!-- Sidebar Menu -->
         <ul class="sidebar-menu">
-            <li class="header">HEADER</li>
+            <li class="header">Main Navigation</li>
             
             <!-- ADMIN HEADER -->
             <?php if($type == 'admin'){ ?>
                 <li class="active"><a href="users.php"><i class="fa fa-users"></i> <span>Users</span></a></li>
             <?php } ?>
             
-            <!-- ADMIN HEADER -->
+            <!-- POI HEADER -->
             <?php if($type == 'poi'){ ?>
                 <li class="active"><a href="points-of-interests.php?x=<?php echo $username; ?>"><i class="fa fa-dot-circle-o"></i> <span>My Points of Interests</span></a></li>
             <?php } ?>
             
-            <!-- ADMIN HEADER -->
+            <!-- LTO HEADER -->
             <?php if($type == 'lto'){ ?>
                 <li class="active"><a href="users.php"><i class="fa fa-users"></i> <span>POI Accounts</span></a></li>
             <?php } ?>
