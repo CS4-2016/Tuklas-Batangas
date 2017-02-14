@@ -48,6 +48,15 @@
         echo "Sorry, your file was not uploaded.";
     // if everything is ok, try to upload file
     } else {
+        
+ if(isset($_POST['submit']) && !empty($_POST['submit'])){
+    if(isset($_POST['g-recaptcha-response']) && !empty($_POST['g-recaptcha-response'])){
+        //your site secret key
+        $secretKey = '6LdqzhMUAAAAAMU3cQ_7OtYlwXSMnV9fwVthlYgM';
+        //get verify response data
+        $verifydata = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret='.$secretKey.'&response='.$_POST['g-recaptcha-response']);
+        $response= json_decode($verifydata);
+        if($response->success){       
         if (move_uploaded_file($_FILES["document"]["tmp_name"], $target_file)) {
             echo "The file ". basename( $_FILES["document"]["name"]). " has been uploaded.";
             
@@ -112,5 +121,23 @@
         } else {
             echo "Sorry, there was an error uploading your file.";
         }
+        
+        
+     }
+        else{
+            $error = 'Robot verification failed, please try again.';
+		}
+	}
+    else{
+        $error = 'Please select Google reCAPTCHA.';
+    }
+}
+else{
+    $error = '';
+    $success = '';
+}   
+        
+        
+        
     }    
 ?>
