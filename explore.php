@@ -87,8 +87,7 @@ $("#find_btn").click(function () { //user clicks button
           var geocoder = null;
           var infowindow = null;
  
-          var all_locations =  <?php echo json_encode($a);?>;  
-    
+          var all_locations =  <?php echo json_encode($a);?>;     
             
     
 
@@ -153,13 +152,17 @@ $("#find_btn").click(function () { //user clicks button
                                         var new_marker = new google.maps.Marker({
                                             position: marker_lat_lng,
                                             map: map,
-                                            title: location.name
-                                            
+                                            title: location.name,
+                                            id: all_locations[j]['id']
                                         }); 
-
+                                        
+                                        console.log(new_marker.id);
+                                        
    
                                         var x = document.getElementById("demo1").value;
                                         document.getElementById("demo").innerHTML +="<div>"+ new_marker.title +"<br> meters from my location "+ distance_from_location+ "</div> <br>";
+                                        
+                                        //
                                         google.maps.event.addListener(new_marker, 'click', function () {
                                             if(infowindow){
                              infowindow.setMap(null);
