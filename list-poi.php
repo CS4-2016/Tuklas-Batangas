@@ -49,7 +49,7 @@
                             <div class="slide-text slide_style_left">
                                 <p data-animation="animated fadeInLeft"><?php echo $poiList[0]['establishment'] ?></p>
                                 <p data-animation="animated fadeInLeft"><?php echo $poiList[0]['description'] ?></p>
-                          <a href="view-poi.php?poi=<?php echo $poiList[0]['id']; ?>" target="_blank" class="btn btn-default" data-animation="animated fadeInLeft">select one</a>
+                          <a href="view-poi.php?poi=<?php echo $poiList[0]['id']; ?>" target="_blank" class="btn btn-default" data-animation="animated fadeInLeft">Read more..</a>
                             </div>
                         </div>
                     </div>

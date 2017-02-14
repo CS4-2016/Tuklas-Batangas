@@ -199,7 +199,7 @@
     width: 30%;
     height: 350px;
     font-size: 5px;
-    overflow: hidden;
+    overflow: scroll;
     
 }
 
