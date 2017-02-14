@@ -21,7 +21,7 @@
     $db->Close();
     unset($db);
 ?>
-    
+     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <div id="content">
             <div class="tuklasbatangas-main-content tuklasbatangas-space">
                 <div class="container">
@@ -91,6 +91,9 @@
                                                 </span>
                                             </div>
                                         </div>
+                                         <div class="form-group">
+                                                <div class="g-recaptcha" data-sitekey="6LdqzhMUAAAAAL5RU1phSBwjhnr9lgc95clBQc8Q"></div>
+                                        </div>
                                         <i class="fa fa-question-circle fa-document-info" aria-hidden="true" type="button" data-toggle="modal" data-target="#document-info"></i>     
                                         <div class="modal fade" role="dialog" id="document-info">
                                             <div class="modal-dialog">
@@ -100,7 +103,7 @@
                                                         <h4 class="modal-title">Document upload</h4>
                                                     </div>
                                                     <div class="modal-body">
-                                                        <p>To prove that you are indeed the owner of the establishment you are trying to register, we need a piece of document that justifies your ownership of said establishment. <br><br> Upload only images or PDF files</ul></p>
+                                                        <p>To prove that you are indeed the owner of the establishment you are trying to register, we need a piece of document that justifies your ownership of said establishment. <br><br> Upload only images or PDF files</p>
                                                     </div>
                                                     <div class="modal-footer">
                                                         <button type="button" data-dismiss="modal" class="btn btn-primary modal-dismiss">Got it!</button>
@@ -108,9 +111,11 @@
                                                 </div>
                                             </div>
                                         </div>
+                     
+                               
                                         <div class="form-group">
                                             <div class="login-form-btns">
-                                                <input type="submit" value="REGISTER" class="btn btn-raised btn-primary">
+                                                <input type="submit" value="submit" name="submit" class="btn btn-raised btn-primary">
                                             </div>
                                         </div>
                                         
