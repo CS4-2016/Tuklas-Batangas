@@ -1,35 +1,27 @@
 <?php
     session_start(); 
     require_once("header.php");
-
+    $db = new db();
+    $db -> Connect();
     if(empty($_POST['username']) || empty($_POST['password'])){
         header("Location: register-step2.php");
     }
-        
-    $db = new db();
-    $db -> Connect();
-    $username = $db->Escape($_POST['username']);
+        $username = $db->Escape($_POST['username']);
 
-    $SQL = "SELECT * FROM users WHERE username = '$username'";
-    $db->Query($SQL);
-    
-    $rowcount = mysqli_num_rows($db->result);
-    if($rowcount == 1){
-        $_SESSION["register-username"] = 1;
-        header("Location:register-step2.php");
-    }
+        $SQL = "SELECT * FROM users WHERE username = '$username'";
+        $db->Query($SQL);
 
-    $captcha = $db->Escape($_POST['captcha']);
-    if ($_SESSION["vercode"] == $captcha) {} else{
-        $_SESSION["captcha"] = 1;
-        header("Location:register-step2.php");
-    }
-    
-    $_SESSION['free-username'] = $db->Escape($_POST['username']);
-    $_SESSION['password'] = $db->Escape($_POST['password']);
+        $rowcount = mysqli_num_rows($db->result);
+        if($rowcount == 1){
+            $_SESSION["register-username"] = 1;
+            header("Location:register-step2.php");
+        }
 
-    $db->Close();
-    unset($db);
+        $_SESSION['free-username'] = $db->Escape($_POST['username']);
+        $_SESSION['password'] = $db->Escape($_POST['password']);
+
+        $db->Close();
+        unset($db);
     
 ?>
     

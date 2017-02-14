@@ -48,20 +48,6 @@
                                 
                                             <i class="fa fa-eye show-off2 show-password" id="showPassword2"></i>
                                         </div>
-                                        
-                                        
-                                        <div class="form-group label-floating"> 
-                                            <label class="control-label" for="password">Enter CAPTCHA</label>
-                                            <input type="text" id="captcha" name="captcha" class="inputcaptcha form-control"  required>
-                                            <img src="demo_captcha.php" class="imgcaptcha" alt="captcha"  />
-					                        <img src="img/refresh.png" alt="reload" class="refresh" />
-                                            
-                                            <?php if(!empty($_SESSION['captcha'])){ ?>
-                                                    <span class="reenter-captcha"> Please re-enter CAPTCHA correctly</span>
-                                            <?php unset($_SESSION['captcha']); } ?>
-                                            
-				                        </div>
-
                                         <div class="form-group">
                                             <div class="login-form-btns">
                                                 <input type="submit" value="Proceed to Step 3" class="btn btn-raised btn-primary">
@@ -81,18 +67,10 @@
 		</div><!-- #content -->
 
 <?php require_once("footer.php"); ?>
-<script language="javascript">
-    $(document).ready(function(){
 
-    $(".refresh").click(function () {
-        $(".imgcaptcha").attr("src","demo_captcha.php?_="+((new Date()).getTime()));
-
-    });});
-
-</script>
 
 <?php 
-    unset($_SESSION['captcha']);
+
     unset($_SESSION['register-username']);
 
 ?>

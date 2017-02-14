@@ -32,9 +32,10 @@
                                         <option value="lto">Local Tourism Officer</option>
                                     </select>                
                                 </div>
+                              
                                 <br>
                                 <div class="form-group">
-                                    <center><input class="btn btn-raised btn-primary" type="submit"></center>
+                                    <center><input class="btn btn-raised btn-primary" type="submit" value="NEXT"></center>
                                 </div>
                                 <div class="form-group already-registered">
                                     Already have an account? Click here to <a href="login.php">Login</a>.
@@ -47,3 +48,11 @@
 		</div><!-- #content -->
 
 <?php require_once("footer.php"); ?>
+<script language="javascript">
+    $(document).ready(function(){
+        $(".refresh").click(function () {
+            $(".imgcaptcha").attr("src","demo_captcha.php?_="+((new Date()).getTime()));
+        });
+    });
+
+</script>

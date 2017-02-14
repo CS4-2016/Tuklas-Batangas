@@ -14,4 +14,5 @@
         $_SESSION['type-error'] = 'error';
         header("Location: register.php");    
     }
+
 ?>
