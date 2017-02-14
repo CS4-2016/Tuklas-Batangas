@@ -18,18 +18,35 @@
                     
                     <form class="form-horizontal" method="post" action="login-authentication.php">
                         <fieldset>  
-                            <div class="form-group label-floating">
-                                <label class="control-label" for="username">Username</label>
-                                <input class="form-control" name="username" id="username" type="text">
-                            </div>
+                            <?php if(!empty($_SESSION['login-attempt']) && $_SESSION['login-attempt'] == 'username'){ ?>
+                                
+                                <div class="form-group label-floating">
+                                    <label class="control-label" for="username">Username</label>
+                                    <input class="form-control" name="username" id="username" type="text" value="<?php echo $_SESSION['username-attempt']; ?>">
+                                </div>
+    
+                            <?php }else{ ?>
+                                <div class="form-group label-floating">
+                                    <label class="control-label" for="username">Username</label>
+                                    <input class="form-control" name="username" id="username" type="text">
+                                </div>
+                            <?php } ?>        
+                            
                             
                             <div class="form-group label-floating tuklasbatangas-password-show">
                                 <label class="control-label" for="password">Password</label>
                                 <input type="password" class="form-control tuklasbatangas-password" name="password">
                                 <i class="fa fa-eye show-off show-password" id="showPassword"></i>
-                                <?php if(!empty($_SESSION['login-attempt'])){ ?>
+                                
+                                <?php if(!empty($_SESSION['login-attempt']) && $_SESSION['login-attempt'] == 1){ ?>
                                     <span class="login-fail"> Username or password is incorrect</span>
                                 <?php unset($_SESSION['login-attempt']); } ?>
+                                
+                                <?php if(!empty($_SESSION['login-attempt']) && $_SESSION['login-attempt'] == 'username') { ?>
+                                    <span class="login-fail"> Password is incorrect</span>
+                                <?php unset($_SESSION['login-attempt']);
+                                      unset($_SESSION['username-attempt']); } ?>
+                                
                             </div>
                                 
                             <div class="form-group" style="margin-top: 0;">                                

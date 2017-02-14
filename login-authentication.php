@@ -27,8 +27,22 @@
                 header("Location: admin/index.php");
             }
         }else{
-            echo $_SESSION['login-attempt'] = 1;
-            header("Location: login.php");
+            $SQL = "SELECT * FROM `users` WHERE BINARY (username = '".$username."')";
+            $db->Query($SQL);
+            
+            $rowcount = mysqli_num_rows($db->result);
+            
+            if($rowcount == 1){
+                $_SESSION['login-attempt'] = 'username';
+                $_SESSION['username-attempt'] = $username;
+                header("Location: login.php");
+            }
+            
+            else{
+                $_SESSION['login-attempt'] = 1;
+                header("Location: login.php");
+            }
+            
         }  
     }else{
         $_SESSION['username'] = $_SESSION['free-username'];
