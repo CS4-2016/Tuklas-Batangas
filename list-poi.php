@@ -17,7 +17,7 @@
             $poiList[] = $row;
     }        
     
-?>
+?>   <link href="css/style_jae2.css" rel="stylesheet">
     <div id="content">
         <div class="tuklasbatangas-main-content tuklasbatangas-space <?php if(!empty($_SESSION['username'])){ echo "tuklasbatangas-admin";} ?>">
             <div class="container-fluid">
@@ -36,10 +36,12 @@
                                     <img class="img-responsive" src="gallery/<?php echo $poiList[$x]['username']; ?>/<?php echo $imgs[0]; ?>" alt="">
                                 </a>
                             </div>
-                            <div class="col-md-7">
+                            <div class="col-md-7 ">
+                                <div class="slider-content-listpoi">
                                 <div class="tuklas-head"><?php echo $poiList[$x]['establishment'] ?></div><br>
                                 <p><?php echo $poiList[$x]['description'] ?></p>
                                 <a class="btn btn-primary btn-raised" href="view-poi.php?poi=<?php echo $poiList[$x]['id']?>">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
+                                </div>
                             </div>
                         </div>
                     <?php }?>
