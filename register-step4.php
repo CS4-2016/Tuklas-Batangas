@@ -40,7 +40,7 @@
                                     <div class="progress-bar" style="width: 100%"></div>
                                 </div>
                     
-                                <form class="form-horizontal" method="post" action="register-complete.php" enctype="multipart/form-data">
+                                <form class="form-horizontal"  method="post" action="register-complete.php" enctype="multipart/form-data">
                                     <fieldset>  
                                         <div class="form-group label-floating">
                                             <label class="control-label" for="establishment">Name of Establishment:</label>

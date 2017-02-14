@@ -53,3 +53,20 @@
 .footer-company-name {
     color:white !important;
 }
+
+.slide-text {
+    float: left;
+    margin-right: 30%;
+    color: black;
+    top: 10%;
+    margin: auto;
+    position: fixed;
+    text-align: left;
+    padding: 10px 85px;
+    color: black;
+    background-color: white;
+    width: 30%;
+    height: 350px;
+    font-size: 5px;
+    overflow: scroll;
+}
