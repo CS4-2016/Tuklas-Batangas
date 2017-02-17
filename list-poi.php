@@ -15,13 +15,16 @@
     if($db->result){
         while($row = $db->result->fetch_assoc())
             $poiList[] = $row;
+    }
 ?>
-          <link href="./css/style_jae3.css" rel="stylesheet" media="all">
+
+
+<link href="./css/style_jae3.css" rel="stylesheet" media="all">
 <link href="./css/animate.min.css" rel="stylesheet" media="all">
-          <link href="css/style_jae2.css" rel="stylesheet">
-    <div id="content">
-        <div class="tuklasbatangas-main-content tuklasbatangas-space <?php if(!empty($_SESSION['username'])){ echo "tuklasbatangas-admin";} ?>">
-            <div class="container-fluid">
+<link href="./css/style_jae3.css" rel="javascrpit" media="all">
+ <div id="content">
+        <div class=" <?php if(!empty($_SESSION['username'])){ echo "tuklasbatangas-admin";} ?>">
+          
                 <div class="tuklas-header">
                     The beautiful places in <?php echo ucfirst($city); ?>
                 </div><br> 
@@ -44,11 +47,11 @@
                         <div class="row">
             
                             <div class="slide-text slide_style_left">
-                                <p data-animation="animated fadeInLeft"><?php echo $poiList[0]['establishment'] ?></p>
-                                <p data-animation="animated fadeInLeft"><?php echo $poiList[0]['description'] ?></p>
-                          <a href="view-poi.php?poi=<?php echo $poiList[0]['id']; ?>" target="_blank" class="btn btn-default" data-animation="animated fadeInLeft">Read more..</a>
+                                <p data-animation="animated fadeInLeft" class="header-slide-text"><?php echo $poiList[0]['establishment'] ?></p>
+                                <p class="slide-text-p"><?php echo $poiList[0]['description'] ?></p>
+                                <center> <a href="view-poi.php?poi=<?php echo $poiList[0]['id']; ?>" target="_blank" class="btn btn-raised btn-primary" data-animation="animated fadeInLeft">See More</a></center>
+                                   
                             </div>
-
                         </div>
                     </div>
                 </div>
@@ -67,9 +70,8 @@
                             <!-- Slide Text Layer -->
                             <div class="slide-text slide_style_left">
                                 <p data-animation="animated fadeInLeft"><?php echo $poiList[$x]['establishment'] ?></p>
-                                <p data-animation="animated fadeInLeft"><?php echo $poiList[$x]['description'] ?></p>
+                                <p class="slide-text-p"><?php echo $poiList[$x]['description'] ?></p>
                                 <a href="view-poi.php?poi=<?php echo $poiList[0]['id']; ?>" target="_blank" class="btn btn-default" data-animation="animated fadeInLeft">select one</a>
-
                             </div>
                         </div>
                     </div>

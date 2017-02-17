@@ -13,7 +13,11 @@ if (mysqli_connect_errno())
     $sql= mysqli_query($con,"SELECT * FROM poi");
 
     while( $row =mysqli_fetch_array($sql)){
-    $b=array('id'=>$row["id"], 'name'=>$row["establishment"],'lat' => $row["latitude"], 'lng' => $row["longitude"], 'address'=>$row["address"]);
+    $str = $row['gallery'];
+      $image= explode(",",$str);
+         $last = $image[0];
+      
+    $b=array('id'=>$row["id"], 'name'=>$row["establishment"],'lat' => $row["latitude"], 'lng' => $row["longitude"], 'address'=>$row["address"],'description'=> $row["description"],'gallery'=> $str =$last, 'username'=>$row["username"]);
           $a[$i]=$b;
          $i++;
             
@@ -25,31 +29,23 @@ if (mysqli_connect_errno())
 </script>
    <link href="css/style_jae3.css" rel="stylesheet">  
     <div id="content">
-            <div class="tuklasbatangas-main-content tuklasbatangas-space <?php if(!empty($_SESSION['username'])){ echo "tuklasbatangas-admin";} ?>">
+            <div class=" <?php if(!empty($_SESSION['username'])){ echo "tuklasbatangas-admin";} ?>">
                 <div class="container-fluid">
-                    <div class="row-">
-                <div id="result"></div>
+                    <div class="row">
+                
            
-                        <div class=" col-md-8">
-                            <div id="map_canvas">
-                                </div></div>
-                        <div class="col-md-4 explore-map-tuklas">
-                            <input type="hidden" id="demo1" placeholder="Input Address" required>
-                            <input id="address" placeholder="Input Address"/><button id="find_btn">Find Me</button>
-                             <select id="radius_km">
-                                 <option value=1>1km</option>
-                                 <option value=2>2km</option>
-                                 <option value=5>5km</option>
-                                 <option value=30>30km</option>
-                             </select>
-                             <button onClick="showCloseLocations(); ">Show Locations In Radius</button><br>
-                            <center><button id="empty">Clear the List</button></center>
-                            <p>The List Of Places</p>
-                            <div class="  list-of-places">
-                                <p id="demo" class="demo">
-                        </p></div>
                         
-                        </div>
+                            <div id="map_canvas" class="col-md-8"> 
+                                </div>
+                      <div class="list-places col-md-4">
+                            <input type="hidden" id="demo1" placeholder="Input Address" >
+                           <div class="header-explore"> <center>The List Of Places</center></div><br><br>
+                            <div >
+                            
+                                <p id="demo" class="demo">
+                        </p>
+                        
+                        </div></div>
                         </div>
                 
                     </div>
@@ -58,28 +54,7 @@ if (mysqli_connect_errno())
 		<!-- #content -->
 
 <?php require_once("footer.php"); ?>
-<script>
 
-$("#find_btn").click(function () { //user clicks button
-    if ("geolocation" in navigator){ //check geolocation available 
-        //try to get user current location using getCurrentPosition() method
-        navigator.geolocation.getCurrentPosition(function(position){ 
-            
-
-                $("#address").val(position.coords.latitude+", "+ position.coords.longitude);
-            });
-    }else{
-        console.log("Browser doesn't support geolocation!");
-    }
-});
-    
-        
-  $("#empty").click(function () {
-
-	  $('.demo').empty();
-
-    });
-</script>
 <script>
         var map = null;
           var radius_circle = null;
@@ -87,18 +62,13 @@ $("#find_btn").click(function () { //user clicks button
           var geocoder = null;
           var infowindow = null;
  
-          var all_locations =  <?php echo json_encode($a);?>;  
-    
-            
-    
-
-   
-   
-
+          var all_locations =  <?php echo json_encode($a);?>; 
+      console.log(all_locations);
+          
           $(document).ready(function(){
               var latlng = new google.maps.LatLng(13.7572, 121.0581); 
               var myOptions = {
-                zoom: 1,
+                zoom: 10,
                 center: latlng,
                 mapTypeControl: true,
                 mapTypeControlOptions: {style: google.maps.MapTypeControlStyle.DROPDOWN_MENU},
@@ -115,10 +85,14 @@ $("#find_btn").click(function () { //user clicks button
               });
           });
 
-          function showCloseLocations() {
+          function showCloseLocations(position) {
+              
+            var latitude = position.coords.latitude;
+            var longitude = position.coords.longitude;
+            var latlong1= position.coords.latitude+", "+ position.coords.longitude;
             var i;
-            var radius_km = $('#radius_km').val();
-            var address = $('#address').val();
+            var radius_km = 30;
+            var address = latlong1;
             if (radius_circle) {
                 radius_circle.setMap(null);
                 radius_circle = null;
@@ -149,17 +123,28 @@ $("#find_btn").click(function () { //user clicks button
                                     
                                     var marker_lat_lng = new google.maps.LatLng(location.lat, location.lng);
                                     var distance_from_location = google.maps.geometry.spherical.computeDistanceBetween(address_lat_lng, marker_lat_lng);
+                                   
                                     if (distance_from_location <= radius_km * 1000) {
                                         var new_marker = new google.maps.Marker({
                                             position: marker_lat_lng,
                                             map: map,
-                                            title: location.name
+                                            title: location.name,
+                                             id: all_locations[j]['id'],
+                                          
                                             
                                         }); 
-
-   
+                                      
+                                      var  content = all_locations[j]['description'];
+                                        
+                                       
+                                    var  image = all_locations[j]['gallery'];
+                                        
+                                      
+                                     var  link = all_locations[j]['id'];
+                                    var  username = all_locations[j]['username'];  
                                         var x = document.getElementById("demo1").value;
-                                        document.getElementById("demo").innerHTML +="<div>"+ new_marker.title +"<br> meters from my location "+ distance_from_location+ "</div> <br>";
+                                        document.getElementById("demo").innerHTML +="<div class='explore-info'><a href='view-poi.php?poi="+link+"'>"+'<center><img  class="image-explore" src="gallery/'+username +'/'+ image +'"></center>'+"</a><div class='contentexplore'><b><a class='title-place' href='view-poi.php?poi="+link+"'>" + new_marker.title +"</a></b><br> meters from my location "+ distance_from_location+ "<br></div><p class='contentexplore'>"
+                                            +content+"</p><br>    <center><a href='view-poi.php?poi="+link+"' type='button' class='btn btn-raised btn-primary' id='useGPS' style='padding-right: 10px; padding-left:10px; margin-top: 20px;'>See More</a><br></center></div><br>";
                                         google.maps.event.addListener(new_marker, 'click', function () {
                                             if(infowindow){
                              infowindow.setMap(null);
@@ -167,7 +152,7 @@ $("#find_btn").click(function () { //user clicks button
 
                            }
 
-                                                    infowindow = new google.maps.InfoWindow(
+                            infowindow = new google.maps.InfoWindow(
                             { content: '<div style="color:red">'+location.name +'</div>' + " is " + distance_from_location + " meters from my location",
                               size: new google.maps.Size(150,50),
                               pixelOffset: new google.maps.Size(0, -30)
@@ -193,4 +178,11 @@ $("#find_btn").click(function () { //user clicks button
 
 
           }
+    
+    function getLocation(){
+               var options = {timeout:60000};
+               navigator.geolocation.getCurrentPosition(showCloseLocations);
+        
+         } getLocation();
+    
 </script>

@@ -64,8 +64,10 @@
                             </div>
                             
                             <div class="form-group already-registered">
-                                Don't have an account yet? Click here to <a href="register.php">Register</a>.
+                                Don't have an account yet? Click here to <a href="register.php">Register</a>.<br>
+                                 <a href="forgot_password.php">Forgot Password</a>.
                             </div>
+                            
                         </fieldset>
                     </form>
                 </div>
