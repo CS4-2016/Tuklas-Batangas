@@ -12,7 +12,7 @@
 
             <div class="well well-sm" style="padding:0px;">
                   <fieldset class="">
-                        <legend class="forgotpassword-header"> Can't  Sign in?  &nbsp; Forgot your Password?</legend>
+                        <legend class="forgotpassword-header"> Reset Password</legend>
                 <form action="forgot_password.php" class="form-horizontal"  method="POST">
                   
                         <div class="col-md-3 forgot-password-content"><center>

@@ -96,7 +96,10 @@
                 <span  aria-hidden="true"> <img src="./img/Chevron%20Right%20.png"></span>
                 <span class="sr-only">Next</span>
             </a>
+            
  </div>
+                 
+   </div>
           <?php }?>
             <?php } else{ ?>
                 <div class="tuklas-header2">
