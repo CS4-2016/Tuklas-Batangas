@@ -48,14 +48,6 @@
                                       unset($_SESSION['username-attempt']); } ?>
                                 
                             </div>
-                                
-                            <div class="form-group" style="margin-top: 0;">                                
-                                <div class="checkbox remember-me">
-                                    <label>
-                                        <input type="checkbox"> Remember Me
-                                    </label>
-                                </div>
-                            </div>
                             
                             <div class="form-group">
                                 <div class="login-form-btns">
@@ -64,8 +56,11 @@
                             </div>
                             
                             <div class="form-group already-registered">
+                                <a href="forgot_password.php">Forgot Password?</a>
+                            </div>
+                             
+                            <div class="form-group already-registered">
                                 Don't have an account yet? Click here to <a href="register.php">Register</a>.<br>
-                                 <a href="forgot_password.php">Forgot Password</a>.
                             </div>
                             
                         </fieldset>
