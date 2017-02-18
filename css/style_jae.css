@@ -542,3 +542,7 @@ z-index: -1;
 }
 
 
+
+.listpoi-desc {
+    min-height: 300px;
+}

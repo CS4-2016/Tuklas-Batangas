@@ -144,11 +144,11 @@ if (mysqli_connect_errno())
                                     var  username = all_locations[j]['username'];  
                                         var x = document.getElementById("demo1").value;
                                         document.getElementById("demo").innerHTML +="<div class='explore-info'><a href='view-poi.php?poi="+link+"'>"+'<center><img  class="image-explore" src="gallery/'+username +'/'+ image +'"></center>'+"</a><div class='contentexplore'><b><a class='title-place' href='view-poi.php?poi="+link+"'>" + new_marker.title +"</a></b><br> meters from my location "+ distance_from_location+ "<br></div><p class='contentexplore'>"
-                                            +content+"</p><br>    <center><a href='view-poi.php?poi="+link+"' type='button' class='btn btn-raised btn-primary' id='useGPS' style='padding-right: 10px; padding-left:10px; margin-top: 20px;'>See More</a><br></center></div><br>";
-                                        google.maps.event.addListener(new_marker, 'click', function () {
+                                        +content+"</p><br>    <center><a href='view-poi.php?poi="+link+"' type='button' class='btn btn-raised btn-primary' id='useGPS' style='padding-right: 10px; padding-left:10px; margin-top: 20px;'>See More</a><br></center></div><br>";
+                        google.maps.event.addListener(new_marker, 'click', function () {
                                             if(infowindow){
-                             infowindow.setMap(null);
-                             infowindow = null;
+                                             infowindow.setMap(null);
+                                             infowindow = null;
 
                            }
 

@@ -47,8 +47,8 @@
                         <div class="row">
             
                             <div class="slide-text slide_style_left">
-                                <p data-animation="animated fadeInLeft" class="header-slide-text"><?php echo $poiList[0]['establishment'] ?></p>
-                                <p class="slide-text-p"><?php echo $poiList[0]['description'] ?></p>
+                                <p data-animation="animated fadeInLeft" class="header-slide-text"><?php echo $poiList[0]['establishment'] ?></p><div class="listpoi-desc">
+                                <p class="slide-text-p"><?php echo $poiList[0]['description'] ?></p></div>
                                 <center> <a href="view-poi.php?poi=<?php echo $poiList[0]['id']; ?>" target="_blank" class="btn btn-raised btn-primary" data-animation="animated fadeInLeft">See More</a></center>
                                    
                             </div>
@@ -61,17 +61,20 @@
                                         <div class="item">
                                             <?php 
                                                 $gallery = explode(",", $poiList[$x]['gallery']);
+                                            
                                             ?>
-                                             <img src="gallery/<?php echo $poiList[$x]['username']; ?>/<?php echo $gallery[$x]; ?>" alt="Bootstrap Touch Slider"  class="slide-image" alt="First slide"/>
+                                             <img src="gallery/<?php echo $poiList[$x]['username']; ?>/<?php echo $gallery[$x]; ?>"  alt="Sorry! Image not available at this time" 
+       onError="this.onerror=null;this.src='img/img-not-found.jpg';"  class="slide-image" alt="First slide"/>
                                             <div class="bs-slider-overlay"></div>
 
                     <div class="container">
                         <div class="row">
                             <!-- Slide Text Layer -->
                             <div class="slide-text slide_style_left">
-                                <p data-animation="animated fadeInLeft"><?php echo $poiList[$x]['establishment'] ?></p>
-                                <p class="slide-text-p"><?php echo $poiList[$x]['description'] ?></p>
-                                <a href="view-poi.php?poi=<?php echo $poiList[0]['id']; ?>" target="_blank" class="btn btn-default" data-animation="animated fadeInLeft">select one</a>
+                                <p data-animation="animated fadeInLeft"  class="header-slide-text"><?php echo $poiList[$x]['establishment'] ?></p>
+                                <div class="listpoi-desc">
+                                <p class="slide-text-p"><?php echo $poiList[$x]['description'] ?></p></div>
+                                  <center> <a href="view-poi.php?poi=<?php echo $poiList[$x]['id']; ?>" target="_blank" class="btn btn-raised btn-primary" data-animation="animated fadeInLeft">See More</a></center>
                             </div>
                         </div>
                     </div>
