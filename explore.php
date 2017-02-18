@@ -153,7 +153,7 @@ if (mysqli_connect_errno())
                            }
 
                             infowindow = new google.maps.InfoWindow(
-                            { content: '<div style="color:red">'+location.name +'</div>' + " is " + distance_from_location + " meters from my location",
+                            { content: '<div style="color:red"><a href="view-poi.php?poi='+link+'">'+location.name +'</a></div>' + " is " + distance_from_location + " meters from my location",
                               size: new google.maps.Size(150,50),
                               pixelOffset: new google.maps.Size(0, -30)
                             , position: marker_lat_lng, map: map});
