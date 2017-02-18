@@ -55,18 +55,36 @@
 }
 
 .slide-text {
-    float: left;
-    margin-right: 30%;
-    color: black;
-    top: 10%;
-    margin: auto;
-    position: fixed;
-    text-align: left;
-    padding: 10px 85px;
+
     color: black;
     background-color: white;
     width: 30%;
     height: 350px;
     font-size: 5px;
-    overflow: scroll;
+    overflow-x: scroll;
 }
+.forgotpassword-main {
+     font-size: 40px;
+    text-align: center;
+}
+
+.forgot-password-content {
+    height: 400px;
+}
+
+.forgot-password-content-FORM {
+    padding-top: 10%;
+}
+
+.forgotpassword-header {
+        color: #ffe97c;
+    background-color: #009688;
+    height: 70px;
+    font-family: 'Rancho', 'cursive';
+    text-align:center;
+    font-size: 35px;
+    padding-top:15px;
+
+}
+
+

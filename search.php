@@ -10,7 +10,7 @@ $output = '';
     {
         $search = $_POST['search'];
         $search = preg_replace("#[^0-9a-z]#i","",$search);
-        $query= $db->Query("SELECT * FROM poi WHERE establishment LIKE'%$search%' OR city LIKE'%$search%'");
+        $query= $db->Query("SELECT * FROM poi WHERE establishment LIKE'%$search%' OR city LIKE'%$search%' OR address LIKE'%$search%' OR description LIKE'%$search%'");
         
         if($db->result){
             while($row = $db->result->fetch_assoc())

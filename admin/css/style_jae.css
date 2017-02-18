@@ -530,3 +530,20 @@ z-index: -1;
     font-size: 15px !important;
     color: black;
 }
+
+.container-list-poi {
+        float: left;
+    margin-right: 30%;
+    color: black;
+    top: 10%;
+    margin: auto;
+    position: fixed;
+    text-align: left;
+    padding: 10px 85px;
+    color: black;
+    background-color: white;
+    width: 30%;
+    height: 350px;
+    font-size: 5px;
+    overflow-x: scroll
+}

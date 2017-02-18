@@ -530,3 +530,15 @@ z-index: -1;
     font-size: 15px !important;
     color: black;
 }
+
+.img-forgotpassword {
+    height: 230px;
+    width: 230px;
+}
+
+.forgot-password-content-p {
+    padding-top: 20px;
+    font-size: 20px;
+}
+
+

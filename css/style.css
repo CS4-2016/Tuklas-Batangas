@@ -182,6 +182,8 @@ body {
     font-family: 'Rancho', cursive;
     font-size: 40px;
     text-align: center;
+       z-index: 10;
+ 
 }
 
 .login-sub-header{
