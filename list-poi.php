@@ -39,7 +39,8 @@
                             
                                         ?>
                     
-                    <img src="gallery/<?php echo $poiList[$x]['username']; ?>/<?php echo $imgs[0]; ?>" alt="Bootstrap Touch Slider"  class="slide-image"/>
+                    <img src="gallery/<?php echo $poiList[$x]['username']; ?>/<?php echo $imgs[0]; ?>" alt="Sorry! Image not available at this time" 
+       onError="this.onerror=null;this.src='img/img-not-found.jpg';"   class="slide-image"/>
                     
              
 
