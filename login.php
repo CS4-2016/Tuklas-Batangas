@@ -1,5 +1,10 @@
 <?php
     session_start(); 
+    
+    if(!empty($_SESSION['username'])){
+        unset($_SESSION['username']);
+    }
+       
     require_once("header.php");
 ?>
     

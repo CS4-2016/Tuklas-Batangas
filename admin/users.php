@@ -1,5 +1,6 @@
 <?php
     session_start(); 
+    $_SESSION['current-page'] = 'users';
     require_once("header.php");
     
     $db = new db();
