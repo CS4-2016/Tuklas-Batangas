@@ -134,6 +134,7 @@
                                 <div class="form-group" style="margin-top: -5px;">
                                     <i class="fa fa-search" style="margin-right: 5px;"></i>
                                     <input type="text" class="form-control col-md-8" name="search" style="font-family: 'Lato', sans-serif;" placeholder="Search">
+                                    
                                 </div>
                             </form>
                             <ul class="nav navbar-nav" id="nav">
@@ -157,3 +158,5 @@
         unset($_SESSION['page']);
     }
 ?>
+        
+  

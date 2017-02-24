@@ -48,11 +48,15 @@
                         <div class="row">
             
                             <div class="slide-text slide_style_left">
-                                <p data-animation="animated fadeInLeft" class="header-slide-text"><?php echo $poiList[0]['establishment'] ?></p><div class="listpoi-desc">
+                                <p data-animation="animated fadeInLeft" class="header-slide-text"><a href="view-poi.php?poi=<?php echo $poiList[0]['id']; ?>"><?php echo $poiList[0]['establishment'] ?></a></p>
+                                <div class="listpoi-desc">
                                 <p class="slide-text-p"><?php echo $poiList[0]['description'] ?></p></div>
-                                <center> <a href="view-poi.php?poi=<?php echo $poiList[0]['id']; ?>" target="_blank" class="btn btn-raised btn-primary" data-animation="animated fadeInLeft">See More</a></center>
-                                   
+                               
+                                  <div>
+                                 <center> <a href="view-poi.php?poi=<?php echo $poiList[0]['id']; ?>" target="_blank" class="btn btn-raised btn-primary" data-animation="animated fadeInLeft">See More</a></center>
+                            </div>  
                             </div>
+                           
                         </div>
                     </div>
                 </div>
@@ -72,7 +76,7 @@
                         <div class="row">
                             <!-- Slide Text Layer -->
                             <div class="slide-text slide_style_left">
-                                <p data-animation="animated fadeInLeft"  class="header-slide-text"><?php echo $poiList[$x]['establishment'] ?></p>
+                                  <p data-animation="animated fadeInLeft" class="header-slide-text"><a href="view-poi.php?poi=<?php echo $poiList[$x]['id']; ?>"><?php echo $poiList[$x]['establishment'] ?></a></p>
                                 <div class="listpoi-desc">
                                 <p class="slide-text-p"><?php echo $poiList[$x]['description'] ?></p></div>
                                   <center> <a href="view-poi.php?poi=<?php echo $poiList[$x]['id']; ?>" target="_blank" class="btn btn-raised btn-primary" data-animation="animated fadeInLeft">See More</a></center>

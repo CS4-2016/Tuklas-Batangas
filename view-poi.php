@@ -53,7 +53,9 @@
                     <div class="col-md-12 personal-info">
                         <div class="tuklas-batangas-view">
                             <?php echo $row['content']; ?>
-                        </div>
+                        </div><br>
+                        <i class="fa fa-question-circle fa-document-info"></i>
+                        <a  aria-hidden="true" type="button" data-toggle="modal" data-target="#establishment-modal1"><b>for company details</b></a>  
                     </div>     
                 </div>
                 <div class="row">
@@ -79,12 +81,38 @@
                 </div>
             </div>
           
-            <div class="modal fade" role="dialog" id="establishment-modal" style="margin-top:50px;">
+            <div class="modal fade" role="dialog" id="establishment-modal1" style="margin-top:50px;">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                            <h4 class="modal-title">Establishment Location</h4>
+                            <center><h4 class="tuklas-header">Establishment Information</h4></center>
+                        </div>
+                        <div class="modal-body">
+                            <b><p class="col-md-6">Establishment Name:</p></b>
+                            <p class="col-md-6"><?php echo $row['establishment']; ?></p>
+                            <b><p class="col-md-6">Establishment Owner:</p></b>
+                            <p class="col-md-6"><?php echo $row['owner']; ?></p>
+                               <b><p class="col-md-6">Address:</p></b>
+                            <p class="col-md-6"><?php echo $row['address']; ?></p>
+                              <b><p class="col-md-6">Email Address:</p></b>  
+                            <p class="col-md-6"><?php echo $row['email']; ?></p> 
+                           <b><p class="col-md-6">Contact Number:</p></b> 
+                            <p class="col-md-6"><?php echo $row['contact']; ?></p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" data-dismiss="modal" class="btn btn-primary modal-dismiss">Got it!</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+               <div class="modal fade" role="dialog" id="establishment-modal" style="margin-top:50px;">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                            <h4 class="modal-title">Establishment </h4>
                         </div>
                         <div class="modal-body">
                             <p>
@@ -101,8 +129,6 @@
                     </div>
                 </div>
             </div>
-            
-            
             <div class="container">
                 <div class="row">
                        <div class="tuklas-header2">
