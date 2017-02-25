@@ -32,16 +32,14 @@ if (mysqli_connect_errno())
             <div class=" <?php if(!empty($_SESSION['username'])){ echo "tuklasbatangas-admin";} ?>">
                 <div class="container-fluid">
                     <div class="row">
-                
-           
-                        
                             <div id="map_canvas" class="col-md-8"> 
                                 </div>
                       <div class="list-places col-md-4">
                             <input type="hidden" id="demo1" placeholder="Input Address" >
+                          
                            <div class="header-explore"> <center>The List Of Places</center></div><br><br>
                             <div >
-                            
+                            <br>
                                 <p id="demo" class="demo">
                         </p>
                         
@@ -131,7 +129,7 @@ if (mysqli_connect_errno())
                                             title: location.name,
                                              id: all_locations[j]['id'],
                                           
-                                            
+                                             animation: google.maps.Animation.DROP
                                         }); 
                                       
                                       var  content = all_locations[j]['description'];
@@ -143,12 +141,12 @@ if (mysqli_connect_errno())
                                      var  link = all_locations[j]['id'];
                                     var  username = all_locations[j]['username'];  
                                         var x = document.getElementById("demo1").value;
-                                        document.getElementById("demo").innerHTML +="<div class='explore-info'><a href='view-poi.php?poi="+link+"'>"+'<center><img  class="image-explore" src="gallery/'+username +'/'+ image +'"></center>'+"</a><div class='contentexplore'><b><a class='title-place' href='view-poi.php?poi="+link+"'>" + new_marker.title +"</a></b><br> meters from my location "+ distance_from_location+ "<br></div><p class='contentexplore'>"
-                                            +content+"</p><br>    <center><a href='view-poi.php?poi="+link+"' type='button' class='btn btn-raised btn-primary' id='useGPS' style='padding-right: 10px; padding-left:10px; margin-top: 20px;'>See More</a><br></center></div><br>";
-                                        google.maps.event.addListener(new_marker, 'click', function () {
+                                        document.getElementById("demo").innerHTML +="<div class='explore-info'><a href='view-poi.php?poi="+link+"'>"+'<center><img  class="image-explore" src="gallery/'+username +'/'+ image +'" alt="Sorry! Image not available at this time" onError="this.onerror=null;this.src="img/img-not-found.jpg";"></center>'+"</a><div class='contentexplore'><b><a class='title-place' href='view-poi.php?poi="+link+"'>" + new_marker.title +"</a></b><br> meters from my location "+ distance_from_location+ "<br></div><p class='contentexplore'>"
+                                        +content+"</p><br>    <center><a href='view-poi.php?poi="+link+"' type='button' class='btn btn-raised btn-primary' id='useGPS' style='padding-right: 10px; padding-left:10px; margin-top: 20px;'>See More</a><br></center></div><br>";
+                        google.maps.event.addListener(new_marker, 'click', function () {
                                             if(infowindow){
-                             infowindow.setMap(null);
-                             infowindow = null;
+                                             infowindow.setMap(null);
+                                             infowindow = null;
 
                            }
 
