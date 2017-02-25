@@ -1,11 +1,25 @@
 <?php
     require_once("dbconn.php");
-
+    
+    if(empty($_SESSION['username'])){
+        header("Location: ../index.php");
+    }    
+    
     $db = new db();
 	$db -> Connect();
 
     $type = $_SESSION['usertype'];
     $username = $_SESSION['username'];
+
+    $current_page = $_SESSION['current-page'];
+
+    if($current_page == 'users'){
+        $header_users = 'active';
+        $header_pageviews = '';
+    } else if($current_page == 'page-views'){
+        $header_users = '';
+        $header_pageviews = 'active';
+    }
 ?>
 
 <!DOCTYPE html>
@@ -71,8 +85,8 @@
                 <i class="fa fa-caret-down"></i>
             </div>
             <ul class="unselectable" id="header-drop-down">
-                <li><a href="user-profile.php"><i class="fa fa-user"></i> User Profile</a></li>
-                <li><a href="logout.php"><i class="fa fa-sign-out"></i> Logout</a></li>
+                <a href="user-profile.php"><li><i class="fa fa-user"></i> User Profile</li></a>
+                <a href="logout.php"><li><i class="fa fa-sign-out"></i> Logout</li></a>
             </ul>
         </div>
     </nav>
@@ -87,7 +101,8 @@
             
             <!-- ADMIN HEADER -->
             <?php if($type == 'admin'){ ?>
-                <li class="active"><a href="users.php"><i class="fa fa-users"></i> <span>Users</span></a></li>
+                <li class="<?php echo $header_users; ?>"><a href="users.php"><i class="fa fa-users"></i> <span>Users</span></a></li>
+                <li class="<?php echo $header_pageviews; ?>"><a href="page-views.php"><i class="fa fa-bar-chart"></i> <span>Page Views</span></a></li>
             <?php } ?>
             
             <!-- POI HEADER -->
@@ -98,7 +113,9 @@
             <!-- LTO HEADER -->
             <?php if($type == 'lto'){ ?>
                 <li class="active"><a href="users.php"><i class="fa fa-users"></i> <span>User Accounts</span></a></li>
-                <li><a href="users.php"><i class="fa fa-users"></i> <span>Points of Interest</span></a></li>
+                <li><a href="#"><i class="fa fa-users"></i> <span>Points of Interest</span></a></li>
+            
+
             <?php } ?>
             
                 
