@@ -97,7 +97,8 @@
             
             <!-- LTO HEADER -->
             <?php if($type == 'lto'){ ?>
-                <li class="active"><a href="users.php"><i class="fa fa-users"></i> <span>POI Accounts</span></a></li>
+                <li class="active"><a href="users.php"><i class="fa fa-users"></i> <span>User Accounts</span></a></li>
+                <li><a href="users.php"><i class="fa fa-users"></i> <span>Points of Interest</span></a></li>
             <?php } ?>
             
                 
