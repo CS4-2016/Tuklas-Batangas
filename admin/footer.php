@@ -1,15 +1,19 @@
 </div>  <!-- /.content-wrapper -->
 
   <!-- Main Footer -->
-    <footer class="main-footer">
+<!--    <footer class="main-footer">-->
     <!-- To the right -->
+<!--
         <div class="pull-right hidden-xs">
             Powered by First Asia Institute of Technology and Humanities - CCIT
         </div>
+-->
     
     <!-- Default to the left -->
+<!--
         <strong>Copyright &copy; 2016 <a href="index.php">Tuklas Batangas</a>.</strong> All rights reserved.
     </footer>
+-->
 
 </div><!-- ./wrapper -->
 

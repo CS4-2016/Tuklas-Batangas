@@ -87,26 +87,23 @@
     position: absolute;
 }
 
-#header-drop-down li{
+#header-drop-down a li{
     border: 1px solid rgba(0,0,0,.15);
     padding:10px 20px;
 }
 
-#header-drop-down li:last-of-type{
+#header-drop-down a li:last-of-type{
     border-top: none; 
 }
 
-#header-drop-down li a{
+#header-drop-down a li{
     text-decoration: none;
     color: black;
     font-size: 12px;
 }
 
-#header-drop-down li:hover{
+#header-drop-down a li:hover{
     background-color: #009688;
-}
-
-#header-drop-down li:hover a{
     color: white;
 }
 
