@@ -1,5 +1,6 @@
 <?php
     session_start(); 
+    $_SESSION['current-page'] = 'add-poi';
     require_once("header.php");
 
     $username = $_SESSION['username'];
@@ -11,6 +12,7 @@
         </h1>
         <ol class="breadcrumb">
             <li><a href="index.php"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li><i class="fa fa-plus-circle"></i> Add New Point of Interest</li>
         </ol>
     </section>
         

@@ -118,7 +118,7 @@ body {
 }
 .fixed .content-wrapper,
 .fixed .right-side {
-  padding-top: 50px;
+    padding-top: 50px;
 }
 @media (max-width: 767px) {
   .fixed .content-wrapper,
@@ -311,7 +311,7 @@ a:focus {
 }
 .content-header {
   position: relative;
-  padding: 15px 15px 0 15px;
+  padding: 50px 15px 0 15px;
 }
 .content-header > h1 {
   margin: 0;
@@ -4910,7 +4910,7 @@ table.text-center th {
   }
   .fixed .content-wrapper,
   .fixed .right-side {
-    padding-top: 0 !important;
+    
   }
   .invoice {
     width: 100%;

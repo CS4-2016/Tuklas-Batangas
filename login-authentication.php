@@ -23,7 +23,7 @@
                 $account = $db->result->fetch_assoc();
                 
                 $_SESSION['usertype'] = $account['type'];
-                
+                $_SESSION['current-page'] = '';
                 header("Location: admin/index.php");
             }
         }else{

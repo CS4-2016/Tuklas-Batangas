@@ -19,6 +19,15 @@
     } else if($current_page == 'page-views'){
         $header_users = '';
         $header_pageviews = 'active';
+    } else if($current_page == 'poi-list'){
+        $header_users = '';
+        $header_poi_list = 'active';
+    } else if($current_page == 'my-poi'){
+        $header_my_poi = 'active';
+        $header_add_poi = '';
+    } else if($current_page == 'add-poi'){
+        $header_my_poi = '';
+        $header_add_poi = 'active';
     }
 ?>
 
@@ -107,13 +116,14 @@
             
             <!-- POI HEADER -->
             <?php if($type == 'poi'){ ?>
-                <li class="active"><a href="points-of-interests.php?x=<?php echo $username; ?>"><i class="fa fa-dot-circle-o"></i> <span>My Points of Interests</span></a></li>
+                <li  class="<?php echo $header_my_poi; ?>"><a href="points-of-interests.php?x=<?php echo $username; ?>"><i class="fa fa-dot-circle-o"></i> <span>My Points of Interest</span></a></li>
+                <li class="<?php echo $header_add_poi; ?>"><a href="add-poi.php"><i class="fa fa-plus-circle"></i> <span> Add New Points of Interest</span></a></li>
             <?php } ?>
             
             <!-- LTO HEADER -->
             <?php if($type == 'lto'){ ?>
-                <li class="active"><a href="users.php"><i class="fa fa-users"></i> <span>User Accounts</span></a></li>
-                <li><a href="#"><i class="fa fa-users"></i> <span>Points of Interest</span></a></li>
+            <li class="<?php echo $header_users; ?>"><a href="users.php"><i class="fa fa-users"></i> <span>Owners List </span></a></li>
+                <li class="<?php echo $header_poi_list; ?>"><a href="poi-list.php"><i class="fa fa-dot-circle-o"></i> <span>Points of Interest</span></a></li>
             
 
             <?php } ?>
