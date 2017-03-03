@@ -1,13 +1,25 @@
 <?php
     session_start(); 
-    $_SESSION['current-page'] = 'my-poi';
+    $_SESSION['current-page'] = 'poi-list';
     require_once("header.php");
 
     $db = new db();
     $db -> Connect();
 
-    $poi = $_GET['x'];
-    $SQL = "SELECT * FROM `poi` WHERE `username` = '$poi'";
+    $username = $_SESSION['username'];
+
+    $SQL = "SELECT `city` FROM `users` WHERE `username` = '$username'";
+
+    $db -> Query($SQL);
+
+    if($db->result){
+        while($row = $db->result->fetch_assoc()){
+            $city[] = $row;
+        } 
+    }
+
+    $city = $city[0]['city'];
+    $SQL = "SELECT * FROM `poi` WHERE `city` = '$city'";
 
     $db -> Query($SQL);
 
@@ -20,11 +32,11 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1>
-            My Points of Interests
+            Points of Interests
         </h1>
         <ol class="breadcrumb">
             <li><a href="index.php"><i class="fa fa-dashboard"></i> Home</a></li>
-            <li><i class="fa fa-dot-circle-o"></i> My Points of Interest</li>
+            <li><i class="fa fa-dot-circle-o"></i> Points of Interest</li>
         </ol>
     </section>
         
@@ -60,16 +72,13 @@
                                                 <td style="vertical-align: middle"><?php echo $poiList[$x]['email']; ?></td>   
                                                 <td style="vertical-align: middle">
                                                     <a href="" class="btn btn-raised btn-xs btn-primary">View</a>
-                                                    <a href="edit-poi.php?x=<?php echo $poiList[$x]['id']; ?>" class="btn btn-raised btn-xs btn-primary">Edit</a>
                                                 </td>   
-                                                
                                             </tr>            
                                     <?php  } ?>
                             </tbody>                   
                         </table>
                     </div>
                     
-                    <center><a href="add-poi.php" class="btn btn-raised btn-primary">Add new </a></center>                    
                 </div>
             </div>
         </div>

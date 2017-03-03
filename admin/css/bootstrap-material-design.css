@@ -3015,7 +3015,7 @@ fieldset[disabled] .navbar .btn-link:focus {
   background-color: #3f51b5;
 }
 .panel.panel-primary > .panel-heading {
-  background-color: #009688;
+  background-color: #337ab7;
 }
 .panel.panel-success > .panel-heading {
   background-color: #4caf50;
@@ -3030,7 +3030,7 @@ fieldset[disabled] .navbar .btn-link:focus {
   background-color: #f44336;
 }
 [class*="panel-"] > .panel-heading {
-  color: rgba(255,255,255, 0.84);
+/*  color: rgba(255,255,255, 0.84);*/
   border: 0;
 }
 .panel-default > .panel-heading,

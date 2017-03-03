@@ -48,14 +48,9 @@
                     if($row[0]['type'] == 'admin'){ ?>
                         <div class="col-md-6 admin-header2">
                             <ul class="admin-status-text">
-                                 <a href="user-profile.php"> 
-                                    <li class=" <?php if(!empty($userprofile)) echo $userprofile; ?>">
-                                        <i class="fa fa-user"></i> User Profile
-                                    </li>
-                                </a>
-                                 <a href="page.php"> 
-                                    <li class=" <?php if(!empty($pagerank)) echo $pagerank; ?>">
-                                        <i class="fa fa-file-text-o"></i> Page Rank
+                                 <a href="../admin/"> 
+                                    <li class="">
+                                        <i class="fa fa-tachometer"></i> Back to Dashboard
                                     </li>
                                 </a>
                             </ul>

@@ -9,8 +9,21 @@
     $usertype = $_SESSION['usertype'];
 
     if($usertype == 'lto'){
+        $username = $_SESSION['username'];
+        $SQL = "SELECT `city` FROM `users` WHERE `username` = '$username'";
+        
+        $db -> Query($SQL);
+
+        if($db->result){
+            while($row = $db->result->fetch_assoc()){
+                $city[] = $row;
+            } 
+        }
+
+        $city = $city[0]['city'];
+        
         $user_header = "Points of Interest Owners";
-        $SQL = "SELECT * FROM `users` where `type` = 'poi'";
+        $SQL = "SELECT `users`.`username`, `users`.`contact`, `users`.`email` FROM  `users` INNER JOIN `poi` ON `users`.`username` = `poi`.`username` where `users`.`type` = 'poi' AND `poi`.`city` = '$city'";
     }else{
         $user_header = "Users";
         $SQL = "SELECT * FROM `users`";
@@ -33,6 +46,7 @@
             </h1>
             <ol class="breadcrumb">
                 <li><a href="index.php"><i class="fa fa-dashboard"></i> Home</a></li>
+                <li><i class="fa fa-users"></i> Users</li>
             </ol>
         </section>
         
