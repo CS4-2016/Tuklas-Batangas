@@ -112,6 +112,8 @@
             <?php if($type == 'admin'){ ?>
                 <li class="<?php echo $header_users; ?>"><a href="users.php"><i class="fa fa-users"></i> <span>Users</span></a></li>
                 <li class="<?php echo $header_pageviews; ?>"><a href="page-views.php"><i class="fa fa-bar-chart"></i> <span>Page Views</span></a></li>
+            
+                <li><a href="../admin-2/"><i class="fa fa-pencil-square-o"></i> <span>Edit Website</span></a></li>
             <?php } ?>
             
             <!-- POI HEADER -->

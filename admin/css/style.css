@@ -218,6 +218,7 @@ transition-delay:.2s;
 }
 
 .panel-red {
+    padding: 10px 15px;
     border-color: #d9534f;
     color: #fff;
     background-color: #d9534f;

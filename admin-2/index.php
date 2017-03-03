@@ -197,7 +197,7 @@
                                     $gallery = explode(",", $sliderList[0]['gallery']);
                                 ?>
                                 <div class="slider-img">
-                                    <img src="../gallery/<?php echo $sliderList[0]['username']; ?>/<?php echo $gallery[0]; ?>" class="img-responsive" alt="First slide" style="webkit-filter: brightness(50%);filter: brightness(50%);">
+                                    <img src="../gallery/<?php echo $sliderList[0]['username']; ?>/<?php echo $gallery[0]; ?>" class="img-responsive" alt="First slide">
                                 </div>
                                 <div class="header-text">
                                     

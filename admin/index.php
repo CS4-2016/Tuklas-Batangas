@@ -68,6 +68,29 @@
                         </a>
                     </div>
                 </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="panel panel-primary">
+                        <div class="panel-red">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="fa fa-pencil-square-o fa-tuklas-panel"></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge"></div>
+                                    <div>Edit Website</div>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="panel-a-red" href="../admin-2/">
+                            <div class="panel-footer">
+                                <span class="pull-left">Edit Website</span>
+                                <span class="pull-right"><i class="fa fa-sign-out"></i></span>
+                                <div class="clearfix"></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
             </div>
     
         <?php } 
